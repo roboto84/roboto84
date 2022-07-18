@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<title>roboto84</title>
+	<subtitle>Software Worth Debugging</subtitle>
+	
+	<link href="/atom.xml" rel="self"/>
+	<link href=""/>
+	<updated>2022-07-18T14:02:54Z</updated>
+	<id>https://roboto84.dev</id>
+	<author>
+		<name>roboto84</name>
+		<email>none</email>
+	</author>
+	
+	<entry>
+		<title>SSH Banner</title>
+		<link href="/posts/ssh_banner/"/>
+		<updated>2022-07-17T00:00:00Z</updated>
+		<id>/posts/ssh_banner/</id>
+		<content type="html">&lt;p&gt;Lets talk about your SSH Server Banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
+</content>
+	</entry>
+</feed>
