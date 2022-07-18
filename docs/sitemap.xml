@@ -2,57 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://roboto84.dev/roboto84/posts/ssh_banner/</loc>
+    <loc>https://roboto84.dev/posts/ssh_banner/</loc>
     <lastmod>2022-07-17</lastmod>
   </url>
   
   <url>
-    <loc>https://roboto84.dev/roboto84/posts/docile_millennials/</loc>
+    <loc>https://roboto84.dev/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
   
   <url>
-    <loc>https://roboto84.dev/roboto84/</loc>
+    <loc>https://roboto84.dev/pages/about/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
   
   <url>
-    <loc>https://roboto84.dev/roboto84/pages/about/</loc>
+    <loc>https://roboto84.dev/tags/terminal/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
   
   <url>
-    <loc>https://roboto84.dev/roboto84/tags/social/</loc>
+    <loc>https://roboto84.dev/tags/ssh/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
   
   <url>
-    <loc>https://roboto84.dev/roboto84/tags/millennials/</loc>
+    <loc>https://roboto84.dev/tags/server/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
   
   <url>
-    <loc>https://roboto84.dev/roboto84/tags/thoughts/</loc>
-    <lastmod>2022-07-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://roboto84.dev/roboto84/tags/terminal/</loc>
-    <lastmod>2022-07-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://roboto84.dev/roboto84/tags/ssh/</loc>
-    <lastmod>2022-07-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://roboto84.dev/roboto84/tags/server/</loc>
-    <lastmod>2022-07-18</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://roboto84.dev/roboto84/tags/</loc>
+    <loc>https://roboto84.dev/tags/</loc>
     <lastmod>2022-07-18</lastmod>
   </url>
 </urlset>

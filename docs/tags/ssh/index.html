@@ -6,18 +6,18 @@
   <title>Tagged “ssh” | roboto84</title>
   <meta name="description" content="A simple website about roboto84.">
 
-  <link rel="shortcut icon" href="/roboto84/static/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/roboto84/static/css/main.css" media="all">
+  <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/main.css" media="all">
 
 </head>
 <body>
   
 <nav class="navbar">
   <div class="navbar__inner">
-    <a class="navbar__logo" href="/roboto84/">
+    <a class="navbar__logo" href="/">
       <div class="navbar__logo-container">
         <div class="avatar">
-            <img src="/roboto84/static/img/avatar.png" alt="">
+            <img src="/static/img/avatar.png" alt="">
         </div>
         <div class="navbar__logo-title">
           <div>roboto84</div>
@@ -27,7 +27,7 @@
     <div class="navbar__mobile-options">
 
       <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
-        <img src="/roboto84/static/img/moon.svg" alt="">
+        <img src="/static/img/moon.svg" alt="">
       </div>
 
       <button class="navbar__button navbar__hamburger" aria-expanded="false" aria-label="toggle menu">
@@ -40,13 +40,13 @@
 
     <div class="navbar__links">
       
-        <a class="navbar__link " href="/roboto84/">
+        <a class="navbar__link " href="/">
           home
         </a>
-        <a class="navbar__link " href="/roboto84/pages/about/">
+        <a class="navbar__link " href="/pages/about/">
           about
         </a>
-        <a class="navbar__link " href="/roboto84/tags/">
+        <a class="navbar__link " href="/tags/">
           tags
         </a>
 
@@ -59,7 +59,7 @@
       </a>
 
       <div class="navbar__button dark-toggle" aria-label="toggle dark theme">
-        <img src="/roboto84/static/img/moon.svg" alt="">
+        <img src="/static/img/moon.svg" alt="">
       </div>
 
     </div>
@@ -67,13 +67,13 @@
 
   <div class="navbar__mobile-links">
     
-      <a class="navbar__mobile-link " href="/roboto84/">
+      <a class="navbar__mobile-link " href="/">
         home
       </a>
-      <a class="navbar__mobile-link " href="/roboto84/pages/about/">
+      <a class="navbar__mobile-link " href="/pages/about/">
         about
       </a>
-      <a class="navbar__mobile-link " href="/roboto84/tags/">
+      <a class="navbar__mobile-link " href="/tags/">
         tags
       </a>
       <a class="navbar__mobile-link " href="https://github.com/roboto84" target="__blank">
@@ -94,7 +94,7 @@
   
     <div class="card">
       <h3 class="card__title">
-        <a href="/roboto84/posts/ssh_banner/">SSH Banner</a>
+        <a href="/posts/ssh_banner/">SSH Banner</a>
       </h3>
       <p class="card__date">17 Jul, 2022</p>
       <p class="card__description">Get a banner on that SSH server and get you some serv cred.</p>
@@ -104,15 +104,15 @@
           
         
           
-            <a href="/roboto84/tags/terminal">terminal</a>, 
+            <a href="/tags/terminal">terminal</a>, 
           
         
           
-            <a href="/roboto84/tags/ssh">ssh</a>, 
+            <a href="/tags/ssh">ssh</a>, 
           
         
           
-            <a href="/roboto84/tags/server">server</a>
+            <a href="/tags/server">server</a>
           
         
       </div>
@@ -121,7 +121,7 @@
 </div>
 
 
-  <p>See <a href="/roboto84/tags/">all tags</a>.</p>
+  <p>See <a href="/tags/">all tags</a>.</p>
 </div>
 
 
@@ -137,9 +137,9 @@
     function changeDarkToggleBtnIcon () {
       darkToggleButtons.forEach(btn => {
         if (btn.querySelector('img').src.indexOf('/static/img/moon.svg') !== -1) {
-          btn.querySelector('img').src = "/roboto84/static/img/sun.svg"
+          btn.querySelector('img').src = "/static/img/sun.svg"
         } else {
-          btn.querySelector('img').src = "/roboto84/static/img/moon.svg"
+          btn.querySelector('img').src = "/static/img/moon.svg"
         }
       })
     }
