@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://roboto84.dev/pages/about/</loc>
+    <lastmod>2022-07-17</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://roboto84.dev/pages/projects/</loc>
+    <lastmod>2022-07-17</lastmod>
+  </url>
+  
+  <url>
     <loc>https://roboto84.dev/posts/ssh_banner/</loc>
     <lastmod>2022-07-17</lastmod>
   </url>
   
   <url>
     <loc>https://roboto84.dev/</loc>
-    <lastmod>2022-07-19</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://roboto84.dev/pages/about/</loc>
     <lastmod>2022-07-19</lastmod>
   </url>
   
