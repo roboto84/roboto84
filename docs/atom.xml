@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-07-19T20:31:48Z</updated>
+	<updated>2022-07-21T10:49:10Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -13,11 +13,74 @@
 	</author>
 	
 	<entry>
-		<title>SSH Banner</title>
+		<title>SSH Server Banner</title>
 		<link href="/posts/ssh_banner/"/>
 		<updated>2022-07-17T00:00:00Z</updated>
 		<id>/posts/ssh_banner/</id>
-		<content type="html">&lt;p&gt;Lets talk about your SSH Server Banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
+		<content type="html">&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Lets talk about your SSH Server Banner, and the fact that you don&#39;t have one... just yet.   No worries, that was me not too long ago.  It is easy to configure, but the first question to ask before you do anything is an existential consideration of the matter ...&lt;/p&gt;
+&lt;img title=&quot;&quot; src=&quot;https://i.imgflip.com/6nf2u1.jpg&quot; alt=&quot;&quot; data-align=&quot;center&quot; /&gt;
+&lt;p&gt;Well, there are a few reasons to have one:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A security warning to let anyone attempting to log into the server you administer know the consequences of their actions.&lt;/li&gt;
+&lt;li&gt;To establish the terms and conditions upon which the server can be used.&lt;/li&gt;
+&lt;li&gt;To present the user with any server information that doesn&#39;t require a password, and should be public knowledge (i.e. branding).&lt;/li&gt;
+&lt;li&gt;Dare I say, server ricing 😏 (Don&#39;t know what ricing is? Check out the term here: &lt;a href=&quot;https://jie-fang.github.io/blog/basics-of-ricing&quot;&gt;The Basics of Ricing Linux&lt;/a&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you have concluded to proceed, then let us begin.&lt;/p&gt;
+&lt;h3&gt;Procedure&lt;/h3&gt;
+&lt;h5&gt;Edit &#39;sshd_config&#39;&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Prepare to edit the server&#39;s SSH configuration file &lt;code&gt;sshd_config&lt;/code&gt; using &lt;code&gt;sudo vi /etc/ssh/sshd_config&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Change the line &lt;code&gt;#Banner none&lt;/code&gt; to &lt;code&gt;Banner /etc/issue&lt;/code&gt; and save the file.  This will activate a banner on an SSH login attempt.  The path of the file given can be any of your choosing.  In this example the standard path of &lt;code&gt;/etc/issue&lt;/code&gt; is used.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This concludes all the configuration needed on the SSH service.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Edit Banner File&lt;/h5&gt;
+&lt;p&gt;Edit the banner file with &lt;code&gt;sudo vi /etc/issue&lt;/code&gt; and inject the banner that should be presented on a login attempt.  The banner file &lt;strong&gt;could&lt;/strong&gt; be a great place to use some ASCII art. I have the following example banner on one of my DEV servers:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;----------------------------------------------------
+  ██╗    ██╗██╗██╗     ██╗      ██████╗ ██╗    ██╗
+  ██║    ██║██║██║     ██║     ██╔═══██╗██║    ██║
+  ██║ █╗ ██║██║██║     ██║     ██║   ██║██║ █╗ ██║
+  ██║███╗██║██║██║     ██║     ██║   ██║██║███╗██║
+  ╚███╔███╔╝██║███████╗███████╗╚██████╔╝╚███╔███╔╝
+   ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚══╝╚══╝
+----------------------------------------------------
+ Staging Server | Welcome, be mindful and have fun!
+----------------------------------------------------
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For some ASCII text art, check out &lt;a href=&quot;https://textkool.com/en/ascii-art-generator?hl=default&amp;amp;vl=default&amp;amp;font=ANSI%20Shadow&amp;amp;text=Your%20text%20here%20&quot;&gt;ASCII art generator | TextKool&lt;/a&gt;. I&#39;m a sucker for the ANSI Shadow look 😋.&lt;/p&gt;
+&lt;h5&gt;Restart SSHD&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;⚠️ WARNING&lt;/strong&gt;: In order for the changes to take effect, the SSH service will need to be restarted. In modern systems this will not disconnect your connection, but on older systems it might. Assure you did not make any mistakes on your SSH config file or the SSH service may &lt;strong&gt;fail&lt;/strong&gt; to restart, and you may struggle to get back into your server. Validate your &lt;code&gt;sshd_config&lt;/code&gt; file with &lt;code&gt;sudo sshd -t&lt;/code&gt;. If no errors appear, you &lt;strong&gt;should&lt;/strong&gt; be good to go.  Check this link out for more information on checking your SSH configuration file: &lt;a href=&quot;https://www.simplified.guide/ssh/test-config&quot;&gt;How to check SSH server&#39;s configuration validity&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Restart the SSH service with &lt;code&gt;sudo service sshd restart&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Check that the SSH service was restarted, loaded, and active with &lt;code&gt;sudo service sshd status&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;At this point, everything should be good to go. Logout and attempt a login to see your new banner.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;With this procedure we have discussed the considerations for a SSH server banner, how to activate it and implement it. Here are some other useful links on the matter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.tecmint.com/ssh-warning-banner-linux/&quot;&gt;How to Set a Custom SSH Warning Banner and MOTD in Linux&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.shellhacks.com/setup-warning-message-banner-ssh/&quot;&gt;HowTo: Set a Warning Message (Banner) in SSH - ShellHacks&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enjoy your cool new banner... 😏 if it is subjectively cool.&lt;/p&gt;
 </content>
 	</entry>
 </feed>
