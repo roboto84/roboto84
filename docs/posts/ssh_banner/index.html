@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSH Server Banner | roboto84</title>
+  <title>SSH Banner | roboto84</title>
   <meta name="description" content="Get a banner on that SSH server and get you some serv cred.">
 
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
@@ -92,80 +92,21 @@
 
   
 <div class="container-sm">
-  <h1>SSH Server Banner</h1>
+  <h1>SSH Banner</h1>
   <p>17 Jul, 2022</p>
   <br>
 
-  <h3>Introduction</h3>
-<p>Lets talk about your SSH Server Banner, and the fact that you don't have one... just yet.   No worries, that was me not too long ago.  It is easy to configure, but the first question to ask before you do anything is an existential consideration of the matter ...</p>
-<img title="" src="https://i.imgflip.com/6nf2u1.jpg" alt="" data-align="center">
-<p>Well, there are a few reasons to have one:</p>
-<ul>
-<li>A security warning to let anyone attempting to log into the server you administer know the consequences of their actions.</li>
-<li>To establish the terms and conditions upon which the server can be used.</li>
-<li>To present the user with any server information that doesn't require a password, and should be public knowledge (i.e. branding).</li>
-<li>Dare I say, server ricing 😏 (Don't know what ricing is? Check out the term here: <a href="https://jie-fang.github.io/blog/basics-of-ricing">The Basics of Ricing Linux</a>).</li>
-</ul>
-<p>If you have concluded to proceed, then let us begin.</p>
-<h3>Procedure</h3>
-<h5>Edit 'sshd_config'</h5>
-<ul>
-<li>
-<p>Prepare to edit the server's SSH configuration file <code>sshd_config</code> using <code>sudo vi /etc/ssh/sshd_config</code>.</p>
-</li>
-<li>
-<p>Change the line <code>#Banner none</code> to <code>Banner /etc/issue</code> and save the file.  This will activate a banner on an SSH login attempt.  The path of the file given can be any of your choosing.  In this example the standard path of <code>/etc/issue</code> is used.</p>
-</li>
-<li>
-<p>This concludes all the configuration needed on the SSH service.</p>
-</li>
-</ul>
-<h5>Edit Banner File</h5>
-<p>Edit the banner file with <code>sudo vi /etc/issue</code> and inject the banner that should be presented on a login attempt.  The banner file <strong>could</strong> be a great place to use some ASCII art. I have the following example banner on one of my DEV servers:</p>
-<pre><code class="language-shell">----------------------------------------------------
-  ██╗    ██╗██╗██╗     ██╗      ██████╗ ██╗    ██╗
-  ██║    ██║██║██║     ██║     ██╔═══██╗██║    ██║
-  ██║ █╗ ██║██║██║     ██║     ██║   ██║██║ █╗ ██║
-  ██║███╗██║██║██║     ██║     ██║   ██║██║███╗██║
-  ╚███╔███╔╝██║███████╗███████╗╚██████╔╝╚███╔███╔╝
-   ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚══╝╚══╝
-----------------------------------------------------
- Staging Server | Welcome, be mindful and have fun!
-----------------------------------------------------
-</code></pre>
-<p>For some ASCII text art, check out <a href="https://textkool.com/en/ascii-art-generator?hl=default&amp;vl=default&amp;font=ANSI%20Shadow&amp;text=Your%20text%20here%20">ASCII art generator | TextKool</a>. I'm a sucker for the ANSI Shadow look 😋.</p>
-<h5>Restart SSHD</h5>
-<ul>
-<li>
-<p><strong>⚠️ WARNING</strong>: In order for the changes to take effect, the SSH service will need to be restarted. In modern systems this will not disconnect your connection, but on older systems it might. Assure you did not make any mistakes on your SSH config file or the SSH service may <strong>fail</strong> to restart, and you may struggle to get back into your server. Validate your <code>sshd_config</code> file with <code>sudo sshd -t</code>. If no errors appear, you <strong>should</strong> be good to go.  Check this link out for more information on checking your SSH configuration file: <a href="https://www.simplified.guide/ssh/test-config">How to check SSH server's configuration validity</a></p>
-</li>
-<li>
-<p>Restart the SSH service with <code>sudo service sshd restart</code></p>
-</li>
-<li>
-<p>Check that the SSH service was restarted, loaded, and active with <code>sudo service sshd status</code></p>
-</li>
-<li>
-<p>At this point, everything should be good to go. Logout and attempt a login to see your new banner.</p>
-</li>
-</ul>
-<h3>Conclusion</h3>
-<p>With this procedure we have discussed the considerations for a SSH server banner, how to activate it and implement it. Here are some other useful links on the matter:</p>
-<ul>
-<li>
-<p><a href="https://www.tecmint.com/ssh-warning-banner-linux/">How to Set a Custom SSH Warning Banner and MOTD in Linux</a></p>
-</li>
-<li>
-<p><a href="https://www.shellhacks.com/setup-warning-message-banner-ssh/">HowTo: Set a Warning Message (Banner) in SSH - ShellHacks</a></p>
-</li>
-</ul>
-<p>Enjoy your cool new banner... 😏 if it is subjectively cool.</p>
+  <p>Lets talk about your SSH Server Banner, and the fact that you don't have one... just yet.</p>
 
 
   <br><hr>
   
     <b>Tags: </b>
     
+      
+    
+      
+        <a href="/tags/terminal">terminal</a>, 
       
     
       
