@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-07-24T20:46:17Z</updated>
+	<updated>2022-07-29T02:18:09Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -19,9 +19,13 @@
 		<id>/posts/ssh_banner/</id>
 		<content type="html">&lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Lets talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
-&lt;img src=&quot;/static/img/ssh_banner.gif&quot; alt=&quot;SSH server banner&quot; /&gt;
+&lt;div class=&quot;image_container&quot;&gt;
+  &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/ssh_banner.gif&quot; alt=&quot;SSH server banner&quot; /&gt;
+&lt;/div&gt;
 &lt;p&gt;No worries, that was me not too long ago.  It is easy to configure, but the first question to ask before you do anything is an existential consideration of the matter...&lt;/p&gt;
-&lt;img title=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; src=&quot;https://i.imgflip.com/6nf2u1.jpg&quot; alt=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; data-align=&quot;center&quot; /&gt;
+&lt;div class=&quot;image_container&quot;&gt;
+  &lt;img class=&quot;meme img_shadow&quot; title=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; src=&quot;https://i.imgflip.com/6nf2u1.jpg&quot; alt=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; data-align=&quot;center&quot; /&gt;
+&lt;/div&gt;
 &lt;p&gt;Well, there are a few reasons to have one:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;As a security warning to anyone attempting to log into a server you administer.&lt;/li&gt;

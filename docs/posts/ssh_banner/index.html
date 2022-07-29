@@ -47,11 +47,11 @@
         <a class="navbar__link " href="/pages/about/">
           about
         </a>
-        <a class="navbar__link " href="/tags/">
-          tags
-        </a>
         <a class="navbar__link " href="/pages/projects/">
           projects
+        </a>
+        <a class="navbar__link " href="/tags/">
+          tags
         </a>
         <a class="navbar__link " href="/pages/reading/">
           reading
@@ -80,11 +80,11 @@
       <a class="navbar__mobile-link " href="/pages/about/">
         about
       </a>
-      <a class="navbar__mobile-link " href="/tags/">
-        tags
-      </a>
       <a class="navbar__mobile-link " href="/pages/projects/">
         projects
+      </a>
+      <a class="navbar__mobile-link " href="/tags/">
+        tags
       </a>
       <a class="navbar__mobile-link " href="/pages/reading/">
         reading
@@ -105,9 +105,13 @@
 
   <h3>Introduction</h3>
 <p>Lets talk about your SSH server banner, and the fact that you don't have one... just yet.</p>
-<img src="/static/img/ssh_banner.gif" alt="SSH server banner">
+<div class="image_container">
+  <img class="console_gif img_shadow" src="/static/img/ssh_banner.gif" alt="SSH server banner">
+</div>
 <p>No worries, that was me not too long ago.  It is easy to configure, but the first question to ask before you do anything is an existential consideration of the matter...</p>
-<img title="You were so preoccupied with whether or not you could... you never stopped to think if you should" src="https://i.imgflip.com/6nf2u1.jpg" alt="You were so preoccupied with whether or not you could... you never stopped to think if you should" data-align="center">
+<div class="image_container">
+  <img  class="meme img_shadow" title="You were so preoccupied with whether or not you could... you never stopped to think if you should" src="https://i.imgflip.com/6nf2u1.jpg" alt="You were so preoccupied with whether or not you could... you never stopped to think if you should" data-align="center">
+</div>
 <p>Well, there are a few reasons to have one:</p>
 <ul>
 <li>As a security warning to anyone attempting to log into a server you administer.</li>
@@ -217,11 +221,11 @@
     }
 
     if (
-      localStorage.prefsDark === 'true' || 
+      localStorage.THEME === 'DARK' ||
       (
         window.matchMedia && 
         window.matchMedia('(prefers-color-scheme: dark)').matches && 
-        localStorage.prefsDark !== 'false')
+        localStorage.THEME !== 'LIGHT')
       ) {
       document.body.classList.add('dark')
       changeDarkToggleBtnIcon()
@@ -240,10 +244,10 @@
 
         if (document.body.classList.contains('dark')) {
           document.body.classList.remove('dark')
-          localStorage.prefsDark = 'false'
+          localStorage.THEME = 'LIGHT'
         } else {
           document.body.classList.add('dark')
-          localStorage.prefsDark = 'true'
+          localStorage.THEME = 'DARK'
         }
 
       })

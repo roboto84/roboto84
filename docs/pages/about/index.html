@@ -47,11 +47,11 @@
         <a class="navbar__link navbar__link--active" href="/pages/about/">
           about
         </a>
-        <a class="navbar__link " href="/tags/">
-          tags
-        </a>
         <a class="navbar__link " href="/pages/projects/">
           projects
+        </a>
+        <a class="navbar__link " href="/tags/">
+          tags
         </a>
         <a class="navbar__link " href="/pages/reading/">
           reading
@@ -80,11 +80,11 @@
       <a class="navbar__mobile-link navbar__mobile-link--active" href="/pages/about/">
         about
       </a>
-      <a class="navbar__mobile-link " href="/tags/">
-        tags
-      </a>
       <a class="navbar__mobile-link " href="/pages/projects/">
         projects
+      </a>
+      <a class="navbar__mobile-link " href="/tags/">
+        tags
       </a>
       <a class="navbar__mobile-link " href="/pages/reading/">
         reading
@@ -147,11 +147,11 @@
     }
 
     if (
-      localStorage.prefsDark === 'true' || 
+      localStorage.THEME === 'DARK' ||
       (
         window.matchMedia && 
         window.matchMedia('(prefers-color-scheme: dark)').matches && 
-        localStorage.prefsDark !== 'false')
+        localStorage.THEME !== 'LIGHT')
       ) {
       document.body.classList.add('dark')
       changeDarkToggleBtnIcon()
@@ -170,10 +170,10 @@
 
         if (document.body.classList.contains('dark')) {
           document.body.classList.remove('dark')
-          localStorage.prefsDark = 'false'
+          localStorage.THEME = 'LIGHT'
         } else {
           document.body.classList.add('dark')
-          localStorage.prefsDark = 'true'
+          localStorage.THEME = 'DARK'
         }
 
       })

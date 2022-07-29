@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Books Read | roboto84</title>
+  <title>Reading List | roboto84</title>
   <meta name="description" content="Books read">
 
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
@@ -47,11 +47,11 @@
         <a class="navbar__link " href="/pages/about/">
           about
         </a>
-        <a class="navbar__link " href="/tags/">
-          tags
-        </a>
         <a class="navbar__link " href="/pages/projects/">
           projects
+        </a>
+        <a class="navbar__link " href="/tags/">
+          tags
         </a>
         <a class="navbar__link navbar__link--active" href="/pages/reading/">
           reading
@@ -80,11 +80,11 @@
       <a class="navbar__mobile-link " href="/pages/about/">
         about
       </a>
-      <a class="navbar__mobile-link " href="/tags/">
-        tags
-      </a>
       <a class="navbar__mobile-link " href="/pages/projects/">
         projects
+      </a>
+      <a class="navbar__mobile-link " href="/tags/">
+        tags
       </a>
       <a class="navbar__mobile-link navbar__mobile-link--active" href="/pages/reading/">
         reading
@@ -99,7 +99,7 @@
 
   
 <div class="container">
-  <h2>Books Read</h2>
+  <h2>Reading List</h2>
   
   <hr>
   <div class="card-grid">
@@ -695,13 +695,13 @@
         <div class="card">
           <div class="book_card">
             <div class="book_img_container">
-              <a href="https://www.goodreads.com/book/show/76778.The_Martian_Chronicles?ref=nav_sb_ss_1_18" target="__blank">
+              <a href="https://www.goodreads.com/book/show/76778.The_Martian_Chronicles" target="__blank">
                 <img class="book_img" src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1374049948i/76778.jpg" alt="">
               </a>
             </div>
             <div class="book_summary">
               <h3 class="book_card__title">
-                <a href="https://www.goodreads.com/book/show/76778.The_Martian_Chronicles?ref=nav_sb_ss_1_18" target="__blank">
+                <a href="https://www.goodreads.com/book/show/76778.The_Martian_Chronicles" target="__blank">
                   Martian Chronicles
                 </a>
               </h3>
@@ -756,11 +756,11 @@
     }
 
     if (
-      localStorage.prefsDark === 'true' || 
+      localStorage.THEME === 'DARK' ||
       (
         window.matchMedia && 
         window.matchMedia('(prefers-color-scheme: dark)').matches && 
-        localStorage.prefsDark !== 'false')
+        localStorage.THEME !== 'LIGHT')
       ) {
       document.body.classList.add('dark')
       changeDarkToggleBtnIcon()
@@ -779,10 +779,10 @@
 
         if (document.body.classList.contains('dark')) {
           document.body.classList.remove('dark')
-          localStorage.prefsDark = 'false'
+          localStorage.THEME = 'LIGHT'
         } else {
           document.body.classList.add('dark')
-          localStorage.prefsDark = 'true'
+          localStorage.THEME = 'DARK'
         }
 
       })
