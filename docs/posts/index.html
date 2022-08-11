@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>list of tags | roboto84</title>
+  <title>Posts | roboto84</title>
   <meta name="description" content="A simple website about roboto84.">
 
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
@@ -47,7 +47,7 @@
         <a class="navbar__link " href="/pages/about/">
           about
         </a>
-        <a class="navbar__link " href="/posts/">
+        <a class="navbar__link navbar__link--active" href="/posts/">
           blog
         </a>
         <a class="navbar__link " href="/pages/projects/">
@@ -80,7 +80,7 @@
       <a class="navbar__mobile-link " href="/pages/about/">
         about
       </a>
-      <a class="navbar__mobile-link " href="/posts/">
+      <a class="navbar__mobile-link navbar__mobile-link--active" href="/posts/">
         blog
       </a>
       <a class="navbar__mobile-link " href="/pages/projects/">
@@ -100,21 +100,38 @@
   
 <div class="container">
 
-  <h2>All Tags</h2>
+    <h2>All Posts</h2>
+    <hr>
+    <div class="card-grid">
+  
+    <div class="card">
+      <h3 class="card__title">
+        <a href="/posts/ssh_banner/">SSH Server Banner</a>
+      </h3>
+      <p class="card__date">17 Jul, 2022</p>
+      <p class="card__description">Get a banner on that SSH server and get you some serv cred.</p>
+      <p class="card__subtitle">Tags</p>
+      <div class="card__tags">
+        
+          
+        
+          
+            <a href="/tags/ssh">ssh</a>, 
+          
+        
+          
+            <a href="/tags/server">server</a>
+          
+        
+      </div>
+    </div>
+  
+</div>
 
-  <div class="card-grid">
-    
-    <div class="card">
-      <h2 class="card__title"><a href="/tags/ssh">ssh</a></h2>
-      <div class="card__subtitle">1 Posts</div>
+    <div class="pagination">
+        
+        
     </div>
-    
-    <div class="card">
-      <h2 class="card__title"><a href="/tags/server">server</a></h2>
-      <div class="card__subtitle">1 Posts</div>
-    </div>
-    
-  </div>
 </div>
 
   <footer class="footer">
