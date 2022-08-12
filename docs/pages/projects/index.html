@@ -57,7 +57,7 @@
           reading
         </a>
 
-      <a href="https://github.com/roboto84" target="__blank">
+      <a href="https://github.com/roboto84" target="_blank">
         <button class="navbar__button navbar__github" aria-label="github link">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 18">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
@@ -90,7 +90,7 @@
         reading
       </a>
     
-      <a class="navbar__mobile-link " href="https://github.com/roboto84" target="__blank">
+      <a class="navbar__mobile-link " href="https://github.com/roboto84" target="_blank">
           github
       </a>
   </div>
@@ -100,248 +100,723 @@
   
 <div class="container">
     <h2>Projects</h2>
-    
     <hr>
-    <div class="card-grid">
-    
-        <div class="card">
-            <div class="book_card">
-                <div class="book_img_container">
-                    <img class="book_img" src="/static/img/projects/roboto.png" alt="">
-                </div>
-                <div class="book_summary">
-                    <h3 class="book_card__title">
-                        <a href="https://github.com/roboto84/roboto_ui" target="__blank">
-                            Roboto
-                        </a>
-                    </h3>
-                    <div class="card__button_container">
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/roboto_ui" target="__blank">
-                                <button>
-                                    Code
-                                </button>
-                            </a>
-                        </p>
-                        <p class="book_summary__started_reading">
-                            <a href="https://apps.roboto84.dev/" target="__blank">
-                                <button>
-                                    Demo
-                                </button>
-                            </a>
-                        </p>
+    <p>Currently, I enjoy working with network applications, which have an impact on my personal life.
+These network apps can run on the internet or on a local LAN.  Each setup has its pros and
+cons, but the apps can be configured for either.  Currently, I host demos of the apps on the
+web, but I run the ones I use heavily on my local LAN Fedora server.</p>
+
+    <div class="projects">
+    <div class="project-type-selector">
+        <button class="project-folder-button active">
+            Apps
+        </button>
+        <button class="project-folder-button">
+            Chat
+        </button>
+        <button class="project-folder-button">
+            Services
+        </button>
+        <button class="project-folder-button">
+            Tools
+        </button>
+    </div>
+    <hr>
+    <div>
+
+
+        <div id="apps" class="app_section_container">
+            
+                
+                    <div class="app_section">
+                        <header class="project_header">
+                            <div class="project_img_container">
+                                <img class="project_img" src="/static/img/projects/roboto.png" alt="" />
+                            </div>
+                            <h2 class="project_title">roboto</h2>
+                            <div class="header_button_container">
+                                <a href="https://apps.roboto84.dev/" target="_blank">
+                                    <button>
+                                        Live Web Demo
+                                    </button>
+                                </a>
+                            </div>
+                        </header>
+                        <section class="project_description">
+                            A web platform front-end for a variety of tools. This includes Air, Lexicon, and wh00t. It relies on a REST API and WebSockets for data transfers. It is a minimalist UI with mobile and theming support meant to focus on the data that you care about.
+                        </section>
+                        <div class="card-grid app_grid_spacing">
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        roboto_ui
+                                    </h3>
+                                    <p class="project_component_description">
+                                        A react based project that provides a web UI for various tools.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/roboto_ui" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        roboto_api
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Python FastAPI project that supports multiple API interfaces.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/roboto_api" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <h4>roboto consists of and works with these projects...</h4>
+                        <div class="card-grid app_grid_spacing">
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        air
+                                    </h3>
+                                    <p class="project_component_description">
+                                        A gps location specific weather, and air quality tracking system.
+                                    </p>
+                                    
+                                        <div class="card__button_container">
+                                            <p class="book_summary__started_reading">
+                                                <a href="https://github.com/roboto84/air_core" target="_blank">
+                                                    <button>
+                                                        air_core
+                                                    </button>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    
+                                        <div class="card__button_container">
+                                            <p class="book_summary__started_reading">
+                                                <a href="https://github.com/roboto84/air_bot" target="_blank">
+                                                    <button>
+                                                        air_bot
+                                                    </button>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        lexicon
+                                    </h3>
+                                    <p class="project_component_description">
+                                        A personalized english dictionary made up of the words you curate.
+                                    </p>
+                                    
+                                        <div class="card__button_container">
+                                            <p class="book_summary__started_reading">
+                                                <a href="https://github.com/roboto84/lexicon" target="_blank">
+                                                    <button>
+                                                        lexicon
+                                                    </button>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    
+                                        <div class="card__button_container">
+                                            <p class="book_summary__started_reading">
+                                                <a href="https://github.com/roboto84/lexicon_bot" target="_blank">
+                                                    <button>
+                                                        lexicon_bot
+                                                    </button>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        wh00t
+                                    </h3>
+                                    <p class="project_component_description">
+                                        A LAN chat system with no external dependencies that has support for bot integration.
+                                    </p>
+                                    
+                                        <div class="card__button_container">
+                                            <p class="book_summary__started_reading">
+                                                <a href="https://github.com/roboto84/wh00t_core" target="_blank">
+                                                    <button>
+                                                        wh00t_core
+                                                    </button>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        arcadia
+                                    </h3>
+                                    <p class="project_component_description">
+                                        A website bookmarking system that allows you to relate websites with tags.
+                                    </p>
+                                    
+                                        <div class="card__button_container">
+                                            <p class="book_summary__started_reading">
+                                                <a href="https://github.com/roboto84/arcadia_bot" target="_blank">
+                                                    <button>
+                                                        arcadia_bot
+                                                    </button>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        gopher
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Server stats tracking bot with support for wh00t chat server.
+                                    </p>
+                                    
+                                        <div class="card__button_container">
+                                            <p class="book_summary__started_reading">
+                                                <a href="https://github.com/roboto84/gopher_bot" target="_blank">
+                                                    <button>
+                                                        gopher_bot
+                                                    </button>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    
+                                </div>
+                            
+                        </div>
+                        <hr>
                     </div>
-                </div>
-            </div>
-            <div>
-                <p class="book_summary__started_reading">A web platform front-end for a variety of tools. This includes Air, Lexicon, and wh00t. It relies on a REST API and WebSockets for data transfers. It is a minimalist UI with mobile and theming support meant to focus on the data that you care about.</p>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+
+
+        <div id="chat" class="app_section_container">
+            
+                
+            
+                
+                    <div class="app_section">
+                        <header class="project_header">
+                            <div class="project_img_container">
+                                <img class="project_img" src="/static/img/projects/wh00t.png" alt="" />
+                            </div>
+                            <h2 class="project_title">wh00t</h2>
+                            <div class="header_button_container">
+                                <a href="https://apps.roboto84.dev/wh00t" target="_blank">
+                                    <button>
+                                        Live Web Demo
+                                    </button>
+                                </a>
+                            </div>
+                        </header>
+                        <section class="project_description">
+                            A LAN chat system with no external dependencies that has support for bot integration.
+                        </section>
+                        <div class="card-grid app_grid_spacing">
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        wh00t_client
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Desktop Linux client which uses sockets and the python tkinter UI framework.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/wh00t_client" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        wh00t_server
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Messaging server for users and bots connecting via sockets, or WebSockets.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/wh00t_server" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        wh00t_core
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Lib used by server and clients for messaging connection standards
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/wh00t_core" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <hr>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+
+
+        <div id="services" class="app_section_container">
+            
+                
+            
+                
+            
+                
+                    <div class="app_section">
+                        <header class="project_header">
+                            <div class="project_img_container">
+                                <img class="project_img" src="/static/img/projects/air.png" alt="" />
+                            </div>
+                            <h2 class="project_title">air</h2>
+                            <div class="header_button_container">
+                                
+                                    <a href="https://apps.roboto84.dev/air" target="_blank">
+                                        <button>
+                                            Live Web Demo
+                                        </button>
+                                    </a>
+                                
+                            </div>
+                        </header>
+                        <section class="project_description">
+                            A gps location specific weather, and air quality tracking system. Air uses Roboto as a web UI, but can also run as a wh00t chat bot, or simply a data collecting service which dumps weather data into an SQLite DB. The purpose of Air to help people which are sensitive to weather changes, (due to allergies, migraines, ear aches, joint pain, etc) track weather and air quality patterns to see how the weather impacts their issues.
+                        </section>
+                        <div class="card-grid app_grid_spacing">
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        air_core
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Core lib used to standardized certain concerns on multiple air projects.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/air_core" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        air_collect
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Weather data collection service which saves data to CSVs and SQLite DB.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/air_collect" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        air_bot
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Wh00t chat bot that uses air to look up current weather information.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/air_bot" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <hr>
+                    </div>
+                
+            
+                
+                    <div class="app_section">
+                        <header class="project_header">
+                            <div class="project_img_container">
+                                <img class="project_img" src="/static/img/projects/lexicon.png" alt="" />
+                            </div>
+                            <h2 class="project_title">lexicon</h2>
+                            <div class="header_button_container">
+                                
+                                    <a href="https://apps.roboto84.dev/lexicon" target="_blank">
+                                        <button>
+                                            Live Web Demo
+                                        </button>
+                                    </a>
+                                
+                            </div>
+                        </header>
+                        <section class="project_description">
+                            A personalized english dictionary made up of the words you curate.  Lexicon uses Roboto as a web UI, but can also run as a wh00t chat bot, or as a terminal app.  Lexicon helps you learn the words do not know by looking up the definitions for the unknown words, and saving them in an SQLite DB for later study. A history of the words you have looked up and a &quot;word of the day&quot; feature are implemented.
+                        </section>
+                        <div class="card-grid app_grid_spacing">
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        lexicon
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Core lib used by multiple lexicon projects for standardization, which also serves as a CLI.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/lexicon" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        lexicon_bot
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Wh00t chat bot that supplies uses lexicon for chat word look up capabilities.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/lexicon_bot" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        kindle_word_collector
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Program which transfers words looked up on a kindle dictionary to lexicon&#39;s SQLite DB
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/kindle_word_collector" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <hr>
+                    </div>
+                
+            
+                
+                    <div class="app_section">
+                        <header class="project_header">
+                            <div class="project_img_container">
+                                <img class="project_img" src="/static/img/projects/arcadia.png" alt="" />
+                            </div>
+                            <h2 class="project_title">arcadia</h2>
+                            <div class="header_button_container">
+                                
+                                    <a href="https://apps.roboto84.dev/wh00t" target="_blank">
+                                        <button>
+                                            wh00t /arc
+                                        </button>
+                                    </a>
+                                
+                            </div>
+                        </header>
+                        <section class="project_description">
+                            A website bookmarking system that allows you to relate websites with tags.
+                        </section>
+                        <div class="card-grid app_grid_spacing">
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        arcadia
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Core lib used by multiple arcadia projects.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/arcadia" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        arcadia_bot
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Wh00t chat bot that supplies arcadia bookmarking interface.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/arcadia_bot" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <hr>
+                    </div>
+                
+            
+                
+                    <div class="app_section">
+                        <header class="project_header">
+                            <div class="project_img_container">
+                                <img class="project_img" src="/static/img/projects/gopher.png" alt="" />
+                            </div>
+                            <h2 class="project_title">gopher</h2>
+                            <div class="header_button_container">
+                                
+                                    <a href="https://apps.roboto84.dev/wh00t" target="_blank">
+                                        <button>
+                                            wh00t /gopher
+                                        </button>
+                                    </a>
+                                
+                            </div>
+                        </header>
+                        <section class="project_description">
+                            Server stats tracking bot with support for wh00t chat server.
+                        </section>
+                        <div class="card-grid app_grid_spacing">
+                            
+                                <div class="card">
+                                    <h3 class="book_card__title">
+                                        gopher_bot
+                                    </h3>
+                                    <p class="project_component_description">
+                                        Wh00t chat bot that gives you system information on wherever gopher_bot is running.
+                                    </p>
+                                    <div class="card__button_container">
+                                        <p class="book_summary__started_reading">
+                                            <a href="https://github.com/roboto84/gopher_bot" target="_blank">
+                                                <button>
+                                                    Code
+                                                </button>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <hr>
+                    </div>
+                
+            
+                
+            
+                
+            
+                
+            
+        </div>
+
+
+        <div id="tools" class="app_section_container">
+            <div class="card-grid">
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <div class="card">
+                        <div class="book_card">
+                            <div class="book_img_container">
+                                <img class="book_img" src="/static/img/projects/gogit.png" alt="" />
+                            </div>
+                            <div class="book_summary">
+                                <h3 class="book_card__title">
+                                    gogit
+                                </h3>
+                                <div class="card__button_container">
+                                    <p class="book_summary__started_reading">
+                                        <a href="https://github.com/roboto84/gogit" target="_blank">
+                                            <button>
+                                                Code
+                                            </button>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="book_summary__started_reading">A tool that shows git project information given a parent directory containing one or multiple git project directories.</p>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="card">
+                        <div class="book_card">
+                            <div class="book_img_container">
+                                <img class="book_img" src="/static/img/projects/forgit.png" alt="" />
+                            </div>
+                            <div class="book_summary">
+                                <h3 class="book_card__title">
+                                    forgit
+                                </h3>
+                                <div class="card__button_container">
+                                    <p class="book_summary__started_reading">
+                                        <a href="https://github.com/roboto84/forgit" target="_blank">
+                                            <button>
+                                                Code
+                                            </button>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="book_summary__started_reading">A tool that automatically git commits tracked files to a repo when have they have changed within a given time interval.</p>
+                        </div>
+                    </div>
+                
+            
+                
+                    <div class="card">
+                        <div class="book_card">
+                            <div class="book_img_container">
+                                <img class="book_img" src="/static/img/projects/canary.png" alt="" />
+                            </div>
+                            <div class="book_summary">
+                                <h3 class="book_card__title">
+                                    canary
+                                </h3>
+                                <div class="card__button_container">
+                                    <p class="book_summary__started_reading">
+                                        <a href="https://github.com/roboto84/canary" target="_blank">
+                                            <button>
+                                                Code
+                                            </button>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="book_summary__started_reading">A CLI tool that recursively transverses path given for all video, image, or text files of a specified criteria.</p>
+                        </div>
+                    </div>
+                
+            
             </div>
         </div>
-    
-        <div class="card">
-            <div class="book_card">
-                <div class="book_img_container">
-                    <img class="book_img" src="/static/img/projects/air.png" alt="">
-                </div>
-                <div class="book_summary">
-                    <h3 class="book_card__title">
-                        <a href="https://github.com/roboto84/air_collect" target="__blank">
-                            Air
-                        </a>
-                    </h3>
-                    <div class="card__button_container">
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/air_collect" target="__blank">
-                                <button>
-                                    Code
-                                </button>
-                            </a>
-                        </p>
-                        <p class="book_summary__started_reading">
-                            <a href="https://apps.roboto84.dev/air" target="__blank">
-                                <button>
-                                    Demo
-                                </button>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="book_summary__started_reading">A gps location specific weather, and air quality tracking system. Air uses Roboto as a web UI, but can also run as a wh00t chat bot, or simply a data collecting service which dumps weather data into an SQLite DB. The purpose of Air to help people which are sensitive to weather changes, (due to allergies, migraines, ear aches, joint pain, etc) track weather and air quality patterns to see how the weather impacts their issues.</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="book_card">
-                <div class="book_img_container">
-                    <img class="book_img" src="/static/img/projects/lexicon.png" alt="">
-                </div>
-                <div class="book_summary">
-                    <h3 class="book_card__title">
-                        <a href="https://github.com/roboto84/lexicon" target="__blank">
-                            Lexicon
-                        </a>
-                    </h3>
-                    <div class="card__button_container">
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/lexicon" target="__blank">
-                                <button>
-                                    Code
-                                </button>
-                            </a>
-                        </p>
-                        <p class="book_summary__started_reading">
-                            <a href="https://apps.roboto84.dev/lexicon" target="__blank">
-                                <button>
-                                    Demo
-                                </button>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="book_summary__started_reading">A personalized english dictionary made up of the words you curate.  Lexicon uses Roboto as a web UI, but can also run as a wh00t chat bot, or as a terminal app.  Lexicon helps you learn the words do not know by looking up the definitions for the unknown words, and saving them in an SQLite DB for later study. A history of the words you have looked up and a &quot;word of the day&quot; feature are implemented.</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="book_card">
-                <div class="book_img_container">
-                    <img class="book_img" src="/static/img/projects/wh00t.png" alt="">
-                </div>
-                <div class="book_summary">
-                    <h3 class="book_card__title">
-                        <a href="https://github.com/roboto84/wh00t_client" target="__blank">
-                            wh00t
-                        </a>
-                    </h3>
-                    <div class="card__button_container">
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/wh00t_client" target="__blank">
-                                <button>
-                                    Code
-                                </button>
-                            </a>
-                        </p>
-                        <p class="book_summary__started_reading">
-                            <a href="https://apps.roboto84.dev/wh00t" target="__blank">
-                                <button>
-                                    Demo
-                                </button>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="book_summary__started_reading">A LAN chat system with no external dependencies that has support for bot integration.</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="book_card">
-                <div class="book_img_container">
-                    <img class="book_img" src="/static/img/projects/gogit.png" alt="">
-                </div>
-                <div class="book_summary">
-                    <h3 class="book_card__title">
-                        <a href="https://github.com/roboto84/gogit" target="__blank">
-                            gogit
-                        </a>
-                    </h3>
-                    <div class="card__button_container">
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/gogit" target="__blank">
-                                <button>
-                                    Code
-                                </button>
-                            </a>
-                        </p>
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/gogit" target="__blank">
-                                <button>
-                                    Demo
-                                </button>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="book_summary__started_reading">A tool that shows git project information given a parent directory containing one or multiple git project directories.</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="book_card">
-                <div class="book_img_container">
-                    <img class="book_img" src="/static/img/projects/forgit.png" alt="">
-                </div>
-                <div class="book_summary">
-                    <h3 class="book_card__title">
-                        <a href="https://github.com/roboto84/forgit" target="__blank">
-                            forgit
-                        </a>
-                    </h3>
-                    <div class="card__button_container">
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/forgit" target="__blank">
-                                <button>
-                                    Code
-                                </button>
-                            </a>
-                        </p>
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/forgit" target="__blank">
-                                <button>
-                                    Demo
-                                </button>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="book_summary__started_reading">A tool that automatically git commits to a repo when tracked files have changed within given time interval.</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="book_card">
-                <div class="book_img_container">
-                    <img class="book_img" src="/static/img/projects/gopher.png" alt="">
-                </div>
-                <div class="book_summary">
-                    <h3 class="book_card__title">
-                        <a href="https://github.com/roboto84/forgit" target="__blank">
-                            gopher
-                        </a>
-                    </h3>
-                    <div class="card__button_container">
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/forgit" target="__blank">
-                                <button>
-                                    Code
-                                </button>
-                            </a>
-                        </p>
-                        <p class="book_summary__started_reading">
-                            <a href="https://github.com/roboto84/forgit" target="__blank">
-                                <button>
-                                    Demo
-                                </button>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <p class="book_summary__started_reading">Server stats tracking bot with support for wh00t chat server.</p>
-            </div>
-        </div>
-    
+
+
+    </div>
 </div>
 
     <br><br>
@@ -356,6 +831,14 @@
     const ham = document.querySelector('.navbar__hamburger')
     const menu = document.querySelector('.navbar__mobile-links')
     const darkToggleButtons = document.querySelectorAll('.dark-toggle')
+    const projectsFolderSelectorButtons = document.querySelectorAll('.project-folder-button')
+
+    ham.addEventListener('click', () => {
+      menu.classList.toggle('navbar__mobile-links--open')
+
+      let prevState = JSON.parse(ham.getAttribute('aria-expanded'))
+      ham.setAttribute('aria-expanded', !prevState)
+    })
 
     function changeDarkToggleBtnIcon () {
       darkToggleButtons.forEach(btn => {
@@ -378,13 +861,6 @@
       changeDarkToggleBtnIcon()
     }
 
-    ham.addEventListener('click', () => {
-      menu.classList.toggle('navbar__mobile-links--open')
-
-      let prevState = JSON.parse(ham.getAttribute('aria-expanded'))
-      ham.setAttribute('aria-expanded', !prevState)
-    })
-
     darkToggleButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         changeDarkToggleBtnIcon()
@@ -397,6 +873,21 @@
           localStorage.THEME = 'DARK'
         }
 
+      })
+    })
+
+    projectsFolderSelectorButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        projectsFolderSelectorButtons.forEach(btn => {
+          btn.classList.remove('active')
+        })
+        btn.classList.add('active')
+        console.log(btn.innerText)
+        document.getElementById('apps').style.display = 'none'
+        document.getElementById('chat').style.display = 'none'
+        document.getElementById('services').style.display = 'none'
+        document.getElementById('tools').style.display = 'none'
+        document.getElementById(btn.innerText.toLowerCase()).style.display = 'inherit'
       })
     })
   </script>
