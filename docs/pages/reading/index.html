@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reading List | roboto84</title>
+  <title>Reading | roboto84</title>
   <meta name="description" content="Books read">
 
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/static/css/main.css" media="all">
-  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+  <link id="prism_link" href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet">
 
 </head>
 <body>
@@ -99,7 +99,9 @@
 
   
 <div class="container">
-  <h2>Reading List</h2>
+  <h2 class="header_right">
+    <span class="title_wrapper">&lt;/</span> Reading <span class="title_wrapper">&gt;</span>
+  </h2>
   
   <hr>
   <div class="card-grid">
@@ -800,13 +802,8 @@
       })
     }
 
-    if (
-      localStorage.THEME === 'DARK' ||
-      (
-        window.matchMedia && 
-        window.matchMedia('(prefers-color-scheme: dark)').matches && 
-        localStorage.THEME !== 'LIGHT')
-      ) {
+    if (localStorage.THEME === 'DARK' || (window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.THEME !== 'LIGHT')) {
       document.body.classList.add('dark')
       changeDarkToggleBtnIcon()
     }
