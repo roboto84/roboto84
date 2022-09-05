@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-09-02T22:20:58Z</updated>
+	<updated>2022-09-05T05:33:29Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -58,7 +58,7 @@
 		<updated>2022-07-17T00:00:00Z</updated>
 		<id>/posts/SSH_Banner/</id>
 		<content type="html">&lt;h3&gt;Introduction&lt;/h3&gt;
-&lt;p&gt;Lets talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
+&lt;p&gt;Let&#39;s talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
   &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/ssh_banner.gif&quot; alt=&quot;SSH server banner&quot; /&gt;
 &lt;/div&gt;
