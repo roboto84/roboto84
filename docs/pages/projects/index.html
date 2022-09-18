@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>projects | roboto84</title>
   <meta name="description" content="Current project worked on">
-
+  <link rel="preload" href="/static/css/fonts/RoboSapien.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/static/css/main.css" media="all">
 </head>
@@ -16,10 +16,10 @@
     <a class="navbar__logo" title="logo" href="/">
       <div class="navbar__logo-container">
         <div class="avatar">
-            <img src="/static/img/avatar_small.webp" alt="">
+            <img style="transform: translateZ(0);" src="/static/img/avatar_small.webp" alt="">
         </div>
         <div class="navbar__logo-title">
-          <div><span class="title_wrapper">&lt;/</span> roboto84 <span class="title_wrapper">&gt;</span></div>
+          <h3><span class="main_header_title_wrapper">#</span> roboto84</h3>
         </div>
       </div>
     </a>
@@ -98,7 +98,7 @@
   
 <div class="container">
     <h2 class="header_right">
-        <span class="title_wrapper">&lt;/</span> projects <span class="title_wrapper">&gt;</span>
+        <span class="title_wrapper">&lt;</span> projects <span class="title_wrapper">&gt;</span>
     </h2>
     <hr>
     <section>
@@ -797,7 +797,7 @@ web, but I run the ones I use heavily on my local LAN Fedora server.</p>
                                 </div>
                             </div>
                             <div>
-                                <p class="book_summary__started_reading">A tool that automatically git commits tracked files to a repo when have they have changed within a given time interval.</p>
+                                <p class="book_summary__started_reading">A tool that automatically git commits tracked files to a repo when they have changed within a given time interval.</p>
                             </div>
                         </div>
                     
@@ -845,6 +845,13 @@ web, but I run the ones I use heavily on my local LAN Fedora server.</p>
 </footer>
 
   <script>
+    const heroTitleOptions =  ["A Life Worth Debugging","Iterating through Life's Arrays"]
+    const heroTitleElement = document.getElementById('hero_title')
+
+    if (heroTitleElement) {
+      heroTitleElement.innerText = heroTitleOptions[Math.floor(Math.random() * 10)%2];
+    }
+
     const ham = document.querySelector('.navbar__hamburger')
     const menu = document.querySelector('.navbar__mobile-links')
     const darkToggleButtons = document.querySelectorAll('.dark-toggle')
