@@ -16,11 +16,11 @@
     <a class="navbar__logo" title="roboto84" href="/">
       <div class="navbar__logo-container">
         <div class="avatar">
-            <img title="avatar"
+            <img title="Avatar"
                  width="150"
                  height="150"
                  src="/static/img/avatar_small.webp"
-                 alt="avatar"
+                 alt="Avatar"
             >
         </div>
       </div>
@@ -31,12 +31,11 @@
     <div class="navbar__mobile-options">
 
       <div class="navbar__button navbar__button_border dark-toggle" role="button" aria-label="toggle dark theme">
-        <img title="theme switch"
-        <img title="theme switch"
+        <img title="Theme Switch"
              src="/static/img/moon.svg"
              width="150"
              height="150"
-             alt="dark mode switch">
+             alt="Theme switch">
       </div>
 
       <button title="toggle menu" class="navbar__button navbar__button_border navbar__hamburger" aria-expanded="false" aria-label="toggle menu">
@@ -74,11 +73,11 @@
       </a>
 
       <div class="navbar__button navbar__button_border dark-toggle" aria-label="toggle dark theme">
-        <img title="theme switch"
+        <img title="Theme Switch"
              src="/static/img/moon.svg"
              width="150"
              height="150"
-             alt="dark mode switch"
+             alt="Theme Switch"
         >
       </div>
 
@@ -135,7 +134,7 @@
 <pre class="language-text"><code class="language-text">guest 180<br>postgres 156<br>user1 151<br>support 144<br>git 101<br>mysql 95<br>vagrant 63<br>administrator 60<br>hadoop 56<br>steam 48<br>miner 48<br>minecraft 48<br>xbmc 41<br>www 41<br>tomcat 41<br>jenkins 40<br>Administrator 35<br>dev 34<br>demo 34</code></pre>
 <p>Looking at the usernames, it is obvious that bots are looking for popular services that may setup an SSH server with a weak default password.</p>
 <h5>Mitigation Strategies</h5>
-<p>So what can we do about it?  That depends on how many resources you have to invest.  Enterprise companies have a wide variety of strategies. The most common is to block any connections to their SSH servers from external networks.  They make heavy use of bastion/jump servers which are accessible only via corporate VPNs to a select number of &quot;need to know&quot; privileged users.</p>
+<p>So what can we do about it?  That depends on how many resources you have to invest.  Enterprise companies have a wide variety of strategies. The most common is to block any connections to their SSH servers from external networks.  They make heavy use of bastion jump servers which are accessible only via corporate VPNs to a select number of &quot;need to know&quot; privileged users.</p>
 <p>What about the little guy?  Well, there are still a lot of good options that will keep us safe too.</p>
 <ol>
 <li>Do not allow the <code>root</code> account to connect via SSH.</li>

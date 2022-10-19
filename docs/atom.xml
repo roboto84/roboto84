@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-10-19T20:02:58Z</updated>
+	<updated>2022-10-19T21:20:31Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -38,7 +38,7 @@
 &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;guest 180&lt;br /&gt;postgres 156&lt;br /&gt;user1 151&lt;br /&gt;support 144&lt;br /&gt;git 101&lt;br /&gt;mysql 95&lt;br /&gt;vagrant 63&lt;br /&gt;administrator 60&lt;br /&gt;hadoop 56&lt;br /&gt;steam 48&lt;br /&gt;miner 48&lt;br /&gt;minecraft 48&lt;br /&gt;xbmc 41&lt;br /&gt;www 41&lt;br /&gt;tomcat 41&lt;br /&gt;jenkins 40&lt;br /&gt;Administrator 35&lt;br /&gt;dev 34&lt;br /&gt;demo 34&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Looking at the usernames, it is obvious that bots are looking for popular services that may setup an SSH server with a weak default password.&lt;/p&gt;
 &lt;h5&gt;Mitigation Strategies&lt;/h5&gt;
-&lt;p&gt;So what can we do about it?  That depends on how many resources you have to invest.  Enterprise companies have a wide variety of strategies. The most common is to block any connections to their SSH servers from external networks.  They make heavy use of bastion/jump servers which are accessible only via corporate VPNs to a select number of &amp;quot;need to know&amp;quot; privileged users.&lt;/p&gt;
+&lt;p&gt;So what can we do about it?  That depends on how many resources you have to invest.  Enterprise companies have a wide variety of strategies. The most common is to block any connections to their SSH servers from external networks.  They make heavy use of bastion jump servers which are accessible only via corporate VPNs to a select number of &amp;quot;need to know&amp;quot; privileged users.&lt;/p&gt;
 &lt;p&gt;What about the little guy?  Well, there are still a lot of good options that will keep us safe too.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Do not allow the &lt;code&gt;root&lt;/code&gt; account to connect via SSH.&lt;/li&gt;
@@ -61,17 +61,17 @@
 		<id>/posts/SSH_Banner/</id>
 		<content type="html">&lt;div class=&quot;image_container&quot;&gt;
   &lt;div class=&quot;post_header_image&quot;&gt;
-    &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_banner.webp&quot; alt=&quot;Article Image&quot; data-align=&quot;center&quot; /&gt;
+    &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_banner.webp&quot; alt=&quot;Animated Man on Computer&quot; data-align=&quot;center&quot; /&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Let&#39;s talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
-  &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/ssh_banner.gif&quot; alt=&quot;SSH server banner&quot; /&gt;
+  &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/ssh_banner.gif&quot; alt=&quot;SSH Server Banner Demo Animation&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;No worries, that was me not too long ago.  It is easy to configure, but the first question to ask before you do anything is an existential consideration of the matter...&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
-  &lt;img class=&quot;meme img_shadow&quot; title=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; src=&quot;https://i.imgflip.com/6nf2u1.jpg&quot; alt=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; data-align=&quot;center&quot; /&gt;
+  &lt;img class=&quot;meme img_shadow&quot; title=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; src=&quot;https://i.imgflip.com/6nf2u1.jpg&quot; alt=&quot;You never stopped to think if you should Jurassic Park Meme&quot; data-align=&quot;center&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;Well, there are a few reasons to have one:&lt;/p&gt;
 &lt;ul&gt;
