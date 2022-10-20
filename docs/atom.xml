@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-	<title>roboto84</title>
+	<title>roboto84 - Full-Stack Developer</title>
 	<subtitle>Software Worth Debugging</subtitle>
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-10-19T21:20:31Z</updated>
+	<updated>2022-10-20T02:14:53Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -13,10 +13,10 @@
 	</author>
 	
 	<entry>
-		<title>SSH Login Attempts</title>
-		<link href="/posts/SSH_Unauthorized_Login_Attempts/"/>
+		<title>Malicious SSH Login Attempts</title>
+		<link href="/posts/Malicious_Login_Attempts/"/>
 		<updated>2022-08-25T00:00:00Z</updated>
-		<id>/posts/SSH_Unauthorized_Login_Attempts/</id>
+		<id>/posts/Malicious_Login_Attempts/</id>
 		<content type="html">&lt;div class=&quot;image_container&quot;&gt;
   &lt;div class=&quot;post_header_image&quot;&gt;
     &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_attempts.webp&quot; alt=&quot;Article Image&quot; data-align=&quot;center&quot; /&gt;
@@ -24,6 +24,9 @@
 &lt;/div&gt;
 &lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;If you&#39;re brave enough to host your own server on the wide open internet, you should be aware that hacking bots run rampant, constantly trying to crack your server. Most hackers are pretty lazy. Like any real programmer, a hacker does not like to waste their time. However, their bots have plenty of time to waste and are probably trying to crack your SSH server regularly. Let&#39;s take a look at my recent experience with hacker bots and what I have done about it.&lt;/p&gt;
+&lt;div class=&quot;image_container&quot;&gt;
+  &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;https://i.imgflip.com/6r6ocf.jpg&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
+&lt;/div&gt;
 &lt;h3&gt;Discussion&lt;/h3&gt;
 &lt;h5&gt;Login Attempts&lt;/h5&gt;
 &lt;p&gt;First things first:  We must find these bot login attempts in our logs.  If you&#39;re not coming from an enterprise environment, you probably don&#39;t have some fancy security framework alerting you about every login attempt on your server.  No need to fret though, basic Linux system logs have you covered.  I hopped 🐇 onto one of my Fedora servers and fired up &lt;code&gt;journalctl&lt;/code&gt; to quickly look for SSHD&#39;s invalid login attempts with the following command:&lt;/p&gt;
@@ -55,10 +58,10 @@
 	</entry>
 	
 	<entry>
-		<title>SSH Server Banner</title>
-		<link href="/posts/SSH_Banner/"/>
+		<title>Configure SSH Server Banner</title>
+		<link href="/posts/Configure_SSH_Server_Banner/"/>
 		<updated>2022-07-17T00:00:00Z</updated>
-		<id>/posts/SSH_Banner/</id>
+		<id>/posts/Configure_SSH_Server_Banner/</id>
 		<content type="html">&lt;div class=&quot;image_container&quot;&gt;
   &lt;div class=&quot;post_header_image&quot;&gt;
     &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_banner.webp&quot; alt=&quot;Animated Man on Computer&quot; data-align=&quot;center&quot; /&gt;

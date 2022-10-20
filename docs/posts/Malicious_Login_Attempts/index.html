@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malicious SSH Login Attempts | roboto84 - Full-Stack Developer</title>
+  <meta name="description" content="Taking a look at SSH login attempts.">
+  <link rel="preload" href="/static/css/fonts/RoboSapien.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/main.css" media="all">
+</head>
+<body>
+  
+<nav class="navbar">
+  <div class="navbar__inner">
+    <a class="navbar__logo" title="roboto84" href="/">
+      <div class="navbar__logo-container">
+        <div class="avatar">
+            <img title="Avatar"
+                 width="150"
+                 height="150"
+                 src="/static/img/avatar_small.webp"
+                 alt=""
+            >
+        </div>
+      </div>
+      <div class="navbar__logo-title">
+        <h3><span class="main_header_title_wrapper">#</span> roboto84</h3>
+      </div>
+    </a>
+    <div class="navbar__mobile-options">
+
+      <div class="navbar__button navbar__button_border dark-toggle" role="button" aria-label="toggle dark theme">
+        <img title="Theme Switch"
+             src="/static/img/moon.svg"
+             width="150"
+             height="150"
+             alt="Theme switch">
+      </div>
+
+      <button title="toggle menu" class="navbar__button navbar__button_border navbar__hamburger" aria-expanded="false" aria-label="toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#333333">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="navbar__links">
+      
+        <a class="navbar__link " href="/">
+          home
+        </a>
+        <a class="navbar__link " href="/pages/about/">
+          about
+        </a>
+        <a class="navbar__link " href="/posts/">
+          blog
+        </a>
+        <a class="navbar__link " href="/pages/projects/">
+          projects
+        </a>
+        <a class="navbar__link " href="/pages/reading/">
+          reading
+        </a>
+
+      <a class="navbar__button_border" href="https://github.com/roboto84" target="_blank">
+        <button class="navbar__button navbar__github" title="github link" aria-label="github link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 18">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+        </button>
+      </a>
+
+      <div class="navbar__button navbar__button_border dark-toggle" aria-label="toggle dark theme">
+        <img title="Theme Switch"
+             src="/static/img/moon.svg"
+             width="150"
+             height="150"
+             alt="Theme Switch"
+        >
+      </div>
+
+    </div>
+  </div>
+
+  <div class="navbar__mobile-links">
+    
+      <a class="navbar__mobile-link " href="/">
+        home
+      </a>
+      <a class="navbar__mobile-link " href="/pages/about/">
+        about
+      </a>
+      <a class="navbar__mobile-link " href="/posts/">
+        blog
+      </a>
+      <a class="navbar__mobile-link " href="/pages/projects/">
+        projects
+      </a>
+      <a class="navbar__mobile-link " href="/pages/reading/">
+        reading
+      </a>
+    
+      <a class="navbar__mobile-link " href="https://github.com/roboto84" target="_blank">
+          github
+      </a>
+  </div>
+
+</nav>
+
+  
+<div class="container-sm">
+  <h2>Malicious SSH Login Attempts</h2>
+  <p>25 Aug, 2022</p>
+  <div class="image_container">
+  <div class="post_header_image">
+    <img width="300" height="300" class="meme img_shadow" title="Article Image" src="/static/img/posts/ssh_attempts.webp" alt="Article Image" data-align="center">
+  </div>
+</div>
+<h3>Introduction</h3>
+<p>If you're brave enough to host your own server on the wide open internet, you should be aware that hacking bots run rampant, constantly trying to crack your server. Most hackers are pretty lazy. Like any real programmer, a hacker does not like to waste their time. However, their bots have plenty of time to waste and are probably trying to crack your SSH server regularly. Let's take a look at my recent experience with hacker bots and what I have done about it.</p>
+<div class="image_container">
+  <img width="300" height="300" class="meme img_shadow" title="My Bots are Hacking Your SSH Server" src="https://i.imgflip.com/6r6ocf.jpg" alt="My Bots are Hacking Your SSH Server" data-align="center">
+</div>
+<h3>Discussion</h3>
+<h5>Login Attempts</h5>
+<p>First things first:  We must find these bot login attempts in our logs.  If you're not coming from an enterprise environment, you probably don't have some fancy security framework alerting you about every login attempt on your server.  No need to fret though, basic Linux system logs have you covered.  I hopped 🐇 onto one of my Fedora servers and fired up <code>journalctl</code> to quickly look for SSHD's invalid login attempts with the following command:</p>
+<pre class="language-shell"><code class="language-shell">➜  ~ journalctl --since <span class="token string">"2022-08-08 23:50:00"</span> --until <span class="token string">"2022-08-09 23:50:00"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Invalid user"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l<br><span class="token number">109</span></code></pre>
+<p>That's no joke.  That's 109 invalid login attempts on that particular day.  Actually looking at a couple of days, it was <strong>179 invalid login attempts on average per day</strong>.  What does the actual log look like?  Well, kinda like this:</p>
+<pre class="language-shell"><code class="language-shell">➜  ~ journalctl --since <span class="token string">"2022-08-08 23:50:00"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"Invalid user"</span><br><span class="token punctuation">..</span>.<br>May <span class="token number">16</span> <span class="token number">23</span>:53:35 fedora sshd<span class="token punctuation">[</span><span class="token number">49601</span><span class="token punctuation">]</span>: Invalid user admin from <span class="token number">92.255</span>.85.135 port <span class="token number">33200</span><br>May <span class="token number">17</span> 00:43:12 fedora sshd<span class="token punctuation">[</span><span class="token number">49914</span><span class="token punctuation">]</span>: Invalid user jojo from <span class="token number">92.255</span>.85.135 port <span class="token number">53540</span><br>May <span class="token number">17</span> 00:43:48 fedora sshd<span class="token punctuation">[</span><span class="token number">49917</span><span class="token punctuation">]</span>: Invalid user pi from <span class="token number">121.205</span>.57.223 port <span class="token number">38926</span><br>May <span class="token number">17</span> 00:43:48 fedora sshd<span class="token punctuation">[</span><span class="token number">49918</span><span class="token punctuation">]</span>: Invalid user pi from <span class="token number">121.205</span>.57.223 port <span class="token number">38932</span><br>May <span class="token number">17</span> 01:10:19 fedora sshd<span class="token punctuation">[</span><span class="token number">50102</span><span class="token punctuation">]</span>: Invalid user lab from <span class="token number">92.255</span>.85.135 port <span class="token number">42366</span><br>May <span class="token number">17</span> 01:13:59 fedora sshd<span class="token punctuation">[</span><span class="token number">50147</span><span class="token punctuation">]</span>: Invalid user phpmyadmin from <span class="token number">43.132</span>.157.133 port <span class="token number">48266</span><br>May <span class="token number">17</span> 01:15:21 fedora sshd<span class="token punctuation">[</span><span class="token number">50165</span><span class="token punctuation">]</span>: Invalid user laozhao from <span class="token number">43.154</span>.80.34 port <span class="token number">56600</span><br>May <span class="token number">17</span> 01:40:31 fedora sshd<span class="token punctuation">[</span><span class="token number">50288</span><span class="token punctuation">]</span>: Invalid user berrey from <span class="token number">222.71</span>.13.226 port <span class="token number">32816</span><br><span class="token punctuation">..</span>.</code></pre>
+<h5>Analyzing the Data</h5>
+<p>We can look at this data from 4 different dimensions: time, IP addresses, usernames, and passwords.  In the interest of brevity, I will only be looking at this data from the IP addresses and usernames perspective.  I can tell you right now that the IP addresses are quite randomized.  Hackers have a large pool of IP addresses from which to launch attacks, whether due to VPNs, botnets, etc.  So blocking all these requests at the DMZ/firewall before it reaches our servers by using IP block blacklists isn't going to work.</p>
+<p>What about the usernames?  Well, that is a bit more interesting.  The top 10 usernames and the number of attempted logins were:</p>
+<pre class="language-text"><code class="language-text">admin 3758<br>user 2370<br>user2 1128<br>ubuntu 877<br>debian 689<br>test 597<br>pi 511<br>oracle 429<br>ftpuser 289<br>test1 210</code></pre>
+<p>Some other honorable mentions are:</p>
+<pre class="language-text"><code class="language-text">guest 180<br>postgres 156<br>user1 151<br>support 144<br>git 101<br>mysql 95<br>vagrant 63<br>administrator 60<br>hadoop 56<br>steam 48<br>miner 48<br>minecraft 48<br>xbmc 41<br>www 41<br>tomcat 41<br>jenkins 40<br>Administrator 35<br>dev 34<br>demo 34</code></pre>
+<p>Looking at the usernames, it is obvious that bots are looking for popular services that may setup an SSH server with a weak default password.</p>
+<h5>Mitigation Strategies</h5>
+<p>So what can we do about it?  That depends on how many resources you have to invest.  Enterprise companies have a wide variety of strategies. The most common is to block any connections to their SSH servers from external networks.  They make heavy use of bastion jump servers which are accessible only via corporate VPNs to a select number of &quot;need to know&quot; privileged users.</p>
+<p>What about the little guy?  Well, there are still a lot of good options that will keep us safe too.</p>
+<ol>
+<li>Do not allow the <code>root</code> account to connect via SSH.</li>
+<li>Do not allow user accounts to connect to SSH via passwords.  Use unique SSH keys instead.</li>
+<li>If you have a static IP address you can leverage, consider whitelisting only that IP to access the SSH server.</li>
+<li>Configure the SSH server to use a port other than port 22 (the default SSH port).  This will definitely reduce the invalid login noise as bots usually don't even bother trying other ports as that would waste too much time for them.</li>
+<li>Configure Fail2ban, or your firewall flavor (e.g. UFW, IP tables) to lock out specific IP Addresses for a period of time (e.g. 30 min) if they fail to login with a valid SSH session after several attempts (e.g. 3).</li>
+</ol>
+<p>With all that, which isn't too difficult to set up, it will be nearly impossible to get your SSH server PWNed.</p>
+<h3>Conclusion</h3>
+<p>We started off exploring our logs for unauthorized SSH login attempts.  We had some fun looking at the data and what that tells us about our attackers. Finally, we discussed some considerations to stay protected and not waste our server resources answering hackers' SSH attempts.</p>
+<p>Stay vigilant... 😏 and make those hackers work hard for their bots.</p>
+
+  <hr>
+  
+    <b>Tags: </b>
+    
+      
+    
+      
+        <a href="/tags/ssh">ssh</a>, 
+      
+    
+      
+        <a href="/tags/server">server</a>, 
+      
+    
+      
+        <a href="/tags/hacking">hacking</a>
+      
+    
+  
+  <section>
+    <a href="/">⮜ Back home</a>
+  </section>
+</div>
+
+  <footer class="footer">
+  &copy; 2022 roboto84 - Full-Stack Developer.dev
+</footer>
+
+  <script>
+    const heroTitleOptions =  ["A Life Worth Debugging","Iterating through Life's Arrays"]
+    const heroTitleElement = document.getElementById('hero_title')
+
+    if (heroTitleElement) {
+      heroTitleElement.innerText = heroTitleOptions[Math.floor(Math.random() * 10)%2];
+    }
+
+    const ham = document.querySelector('.navbar__hamburger')
+    const menu = document.querySelector('.navbar__mobile-links')
+    const darkToggleButtons = document.querySelectorAll('.dark-toggle')
+    const projectsFolderSelectorButtons = document.querySelectorAll('.project-folder-button')
+
+    ham.addEventListener('click', () => {
+      menu.classList.toggle('navbar__mobile-links--open')
+
+      let prevState = JSON.parse(ham.getAttribute('aria-expanded'))
+      ham.setAttribute('aria-expanded', !prevState)
+    })
+
+    function changeDarkToggleBtnIcon () {
+      darkToggleButtons.forEach(btn => {
+        if (btn.querySelector('img').src.indexOf('/static/img/moon.svg') !== -1) {
+          btn.querySelector('img').src = "/static/img/sun.svg"
+        } else {
+          btn.querySelector('img').src = "/static/img/moon.svg"
+        }
+      })
+    }
+
+    if (localStorage.THEME === 'DARK' || (window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.THEME !== 'LIGHT')) {
+      document.body.classList.add('dark')
+      changeDarkToggleBtnIcon()
+    }
+
+    darkToggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        changeDarkToggleBtnIcon()
+
+        if (document.body.classList.contains('dark')) {
+          document.body.classList.remove('dark')
+          localStorage.THEME = 'LIGHT'
+        } else {
+          document.body.classList.add('dark')
+          localStorage.THEME = 'DARK'
+        }
+
+      })
+    })
+
+    projectsFolderSelectorButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        projectsFolderSelectorButtons.forEach(btn => {
+          btn.classList.remove('active')
+        })
+        btn.classList.add('active')
+        console.log(btn.innerText)
+        document.getElementById('apps').style.display = 'none'
+        document.getElementById('chat').style.display = 'none'
+        document.getElementById('services').style.display = 'none'
+        document.getElementById('tools').style.display = 'none'
+        document.getElementById(btn.innerText.toLowerCase()).style.display = 'inherit'
+      })
+    })
+  </script>
+</body>
+</html>
