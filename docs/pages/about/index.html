@@ -221,7 +221,68 @@ for myself of running a modern self-sustaining homestead.</p>
 </footer>
 
   <script>
+    const heroTitleOptions =  ["A Life Worth Debugging","Iterating through Life's Arrays"];
+    const heroTitleElement = document.getElementById('hero_title');
 
+    if (heroTitleElement) {
+      heroTitleElement.innerText = heroTitleOptions[Math.floor(Math.random() * 10)%2];
+    }
+
+    const darkToggleButtons = document.querySelectorAll('.dark-toggle');
+    function changeDarkToggleBtnIcon () {
+      darkToggleButtons.forEach(btn => {
+        if (btn.querySelector('img').src.indexOf('/static/img/moon.svg') !== -1) {
+          btn.querySelector('img').src = "/static/img/sun.svg";
+        } else {
+          btn.querySelector('img').src = "/static/img/moon.svg";
+        }
+      })
+    }
+
+    if (localStorage.THEME === 'DARK' || (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.THEME !== 'LIGHT')) {
+        document.body.classList.add('dark');
+        changeDarkToggleBtnIcon();
+    }
+
+    setTimeout(() => {
+      const ham = document.querySelector('.navbar__hamburger');
+      const menu = document.querySelector('.navbar__mobile-links');
+      ham.addEventListener('click', () => {
+        menu.classList.toggle('navbar__mobile-links--open');
+        let prevState = JSON.parse(ham.getAttribute('aria-expanded'));
+        ham.setAttribute('aria-expanded', String(!prevState))
+      });
+
+      darkToggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          changeDarkToggleBtnIcon();
+          if (document.body.classList.contains('dark')) {
+            document.body.classList.remove('dark');
+            localStorage.THEME = 'LIGHT';
+          } else {
+            document.body.classList.add('dark');
+            localStorage.THEME = 'DARK';
+          }
+        })
+      });
+
+      const projectsFolderSelectorButtons = document.querySelectorAll('.project-folder-button');
+      projectsFolderSelectorButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          projectsFolderSelectorButtons.forEach(btn => {
+            btn.classList.remove('active')
+          })
+          btn.classList.add('active')
+          console.log(btn.innerText)
+          document.getElementById('apps').style.display = 'none'
+          document.getElementById('chat').style.display = 'none'
+          document.getElementById('services').style.display = 'none'
+          document.getElementById('tools').style.display = 'none'
+          document.getElementById(btn.innerText.toLowerCase()).style.display = 'inherit'
+        })
+      })
+    }, 0);
   </script>
 </body>
 </html>
