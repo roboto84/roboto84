@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="navbar__logo-title">
-        <h3><span class="main_header_title_wrapper">#</span> roboto84</h3>
+        <h3><span class="title_wrapper">#</span> roboto84</h3>
       </div>
     </a>
     <div class="navbar__mobile-options">
@@ -170,12 +170,11 @@
   <script>
     const heroTitleOptions =  ["A Life Worth Debugging","Iterating through Life's Arrays"];
     const heroTitleElement = document.getElementById('hero_title');
+    const heroDescription = document.getElementById('hero_description');
     let heroText = heroTitleOptions[Math.floor(Math.random() * 10)%2];
 
     function randMs(){
-      const randMs = 150 + (Math.floor(Math.random() * 1000) % 100);
-      console.log(randMs);
-      return randMs;
+      return 100 + (Math.floor(Math.random() * 1000) % 125);
     }
 
     function heroTyping(element, textToAppend, index){
@@ -185,6 +184,8 @@
         setTimeout(()=> {
           heroTyping(heroTitleElement, heroText, currentIndex);
         }, randMs());
+      } else {
+        heroDescription.classList.add('visible');
       }
     }
 
