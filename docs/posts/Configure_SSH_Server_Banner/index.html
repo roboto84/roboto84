@@ -38,12 +38,12 @@
              alt="Theme switch">
       </div>
 
-      <button title="toggle menu" class="navbar__button navbar__button_border navbar__hamburger" aria-expanded="false" aria-label="toggle menu">
+      <div title="toggle menu" class="navbar__button navbar__button_border navbar__hamburger" aria-expanded="false" aria-label="toggle menu">
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#333333">
           <path d="M0 0h24v24H0z" fill="none"/>
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </svg>
-      </button>
+      </div>
     </div>
 
     <div class="navbar__links">
@@ -267,19 +267,23 @@
         })
       });
 
+      const buttons = Array.from(document.getElementsByTagName('button'));
+      buttons.forEach((button) => {
+        button.classList.add('smooth_ease');
+      });
       const projectsFolderSelectorButtons = document.querySelectorAll('.project-folder-button');
-      projectsFolderSelectorButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          projectsFolderSelectorButtons.forEach(btn => {
-            btn.classList.remove('active')
+      projectsFolderSelectorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          projectsFolderSelectorButtons.forEach(otherButton => {
+            otherButton.classList.remove('active')
           })
-          btn.classList.add('active')
-          console.log(btn.innerText)
+          button.classList.add('active')
+          console.log(button.innerText)
           document.getElementById('apps').style.display = 'none'
           document.getElementById('chat').style.display = 'none'
           document.getElementById('services').style.display = 'none'
           document.getElementById('tools').style.display = 'none'
-          document.getElementById(btn.innerText.toLowerCase()).style.display = 'inherit'
+          document.getElementById(button.innerText.toLowerCase()).style.display = 'inherit'
         })
       })
     }, 0);
