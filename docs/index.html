@@ -24,7 +24,7 @@
             >
         </div>
       </div>
-      <div class="navbar__logo-title">
+      <div id="header_logo" class="navbar__logo-title">
         <h3><span class="title_wrapper">#</span> roboto84</h3>
       </div>
     </a>
@@ -225,55 +225,7 @@
     
 
     
-
-    
   
-    
-
-    
-      <div>
-        <h2 class="section-title">
-          Previously Read
-        </h2>
-        <div class="card current-read">
-          <div class="book_card">
-            <div class="book_img_container">
-              <img title="https://www.goodreads.com/book/show/1014436.The_Coming_Race" class="book_img" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1180245048l/1014429.jpg" alt="Book Cover">
-            </div>
-            <div class="book_summary">
-              <h3 class="card__title">
-                <a title="https://www.goodreads.com/book/show/1014436.The_Coming_Race" href="https://www.goodreads.com/book/show/1014436.The_Coming_Race" target="_blank">
-                  The Coming Race
-                </a>
-              </h3>
-              <p class="book_summary__author">Edward Bulwer-Lytton</p>
-              <p class="book_summary__word-count" title="Words (W) | Pages (P)">
-                52,874 W | 154 P
-              </p>
-              <p class="book_summary__started_reading">Started: 2022-07-12</p>
-              <p class="book_summary__finished_reading">Finished: 2022-09-26</p>
-              <p class="book_summary__note"></p>
-              <p class="book_summary__rating">
-                Personal Rating:
-                <br>
-                
-                
-                  🌗
-                
-                
-                  🌑
-                
-                  🌑
-                
-                  🌑
-                
-                  🌑
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     
 
     
@@ -281,17 +233,7 @@
     
 
     
-
-    
   
-    
-
-    
-
-    
-  
-    
-
     
 
     
@@ -299,11 +241,11 @@
     
 
     
-
-    
   
     
 
+    
+  
     
 
     
@@ -354,17 +296,7 @@
     
 
     
-
-    
   
-    
-
-    
-
-    
-  
-    
-
     
 
     
@@ -372,17 +304,7 @@
     
 
     
-
-    
   
-    
-
-    
-
-    
-  
-    
-
     
 
     
@@ -390,17 +312,7 @@
     
 
     
-
-    
   
-    
-
-    
-
-    
-  
-    
-
     
 
     
@@ -408,17 +320,23 @@
     
 
     
+  
+    
 
     
   
     
 
     
+  
+    
 
     
   
     
 
+    
+  
     
 
     
@@ -568,6 +486,9 @@
     }
 
     setTimeout(() => {
+      const headerLogo = document.getElementById('header_logo');
+      headerLogo.classList.add('smooth_ease');
+
       const ham = document.querySelector('.navbar__hamburger');
       const menu = document.querySelector('.navbar__mobile-links');
       ham.addEventListener('click', () => {
@@ -608,7 +529,7 @@
           document.getElementById(button.innerText.toLowerCase()).style.display = 'inherit'
         })
       })
-    }, 0);
+    }, 250);
   </script>
 </body>
 </html>

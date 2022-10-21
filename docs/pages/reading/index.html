@@ -24,7 +24,7 @@
             >
         </div>
       </div>
-      <div class="navbar__logo-title">
+      <div id="header_logo" class="navbar__logo-title">
         <h3><span class="title_wrapper">#</span> roboto84</h3>
       </div>
     </a>
@@ -902,6 +902,9 @@
     }
 
     setTimeout(() => {
+      const headerLogo = document.getElementById('header_logo');
+      headerLogo.classList.add('smooth_ease');
+
       const ham = document.querySelector('.navbar__hamburger');
       const menu = document.querySelector('.navbar__mobile-links');
       ham.addEventListener('click', () => {
@@ -942,7 +945,7 @@
           document.getElementById(button.innerText.toLowerCase()).style.display = 'inherit'
         })
       })
-    }, 0);
+    }, 250);
   </script>
 </body>
 </html>
