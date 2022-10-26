@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-10-26T04:05:02Z</updated>
+	<updated>2022-10-26T15:31:54Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -70,7 +70,7 @@
 &lt;h3&gt;Introduction&lt;/h3&gt;
 &lt;p&gt;Let&#39;s talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
-  &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/ssh_banner.gif&quot; alt=&quot;SSH Server Banner Demo Animation&quot; /&gt;
+  &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/posts/ssh_banner.gif&quot; alt=&quot;SSH Server Banner Demo Animation&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;No worries, that was me not too long ago.  It is easy to configure, but the first question to ask before you do anything is an existential consideration of the matter...&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
