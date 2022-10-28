@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-10-27T15:39:08Z</updated>
+	<updated>2022-10-28T11:18:25Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -22,25 +22,30 @@
     &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_attempts.webp&quot; alt=&quot;Article Image&quot; data-align=&quot;center&quot; /&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;If you&#39;re brave enough to host your own server on the wide open internet, you should be aware that hacking bots run rampant, constantly trying to crack your server. Most hackers are pretty lazy. Like any real programmer, a hacker does not like to waste their time. However, their bots have plenty of time to waste and are probably trying to crack your SSH server regularly. Let&#39;s take a look at my recent experience with hacker bots and what I have done about it.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
   &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;https://i.imgflip.com/6r6ocf.jpg&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
 &lt;/div&gt;
-&lt;h3&gt;Discussion&lt;/h3&gt;
-&lt;h5&gt;Login Attempts&lt;/h5&gt;
+&lt;h3 id=&quot;discussion&quot; tabindex=&quot;-1&quot;&gt;Discussion &lt;a class=&quot;header-anchor&quot; href=&quot;#discussion&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h5 id=&quot;login-attempts&quot; tabindex=&quot;-1&quot;&gt;Login Attempts &lt;a class=&quot;header-anchor&quot; href=&quot;#login-attempts&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;First things first:  We must find these bot login attempts in our logs.  If you&#39;re not coming from an enterprise environment, you probably don&#39;t have some fancy security framework alerting you about every login attempt on your server.  No need to fret though, basic Linux system logs have you covered.  I hopped 🐇 onto one of my Fedora servers and fired up &lt;code&gt;journalctl&lt;/code&gt; to quickly look for SSHD&#39;s invalid login attempts with the following command:&lt;/p&gt;
 &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;➜  ~ journalctl --since &lt;span class=&quot;token string&quot;&gt;&quot;2022-08-08 23:50:00&quot;&lt;/span&gt; --until &lt;span class=&quot;token string&quot;&gt;&quot;2022-08-09 23:50:00&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Invalid user&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wc&lt;/span&gt; -l&lt;br /&gt;&lt;span class=&quot;token number&quot;&gt;109&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;That&#39;s no joke.  That&#39;s 109 invalid login attempts on that particular day.  Actually looking at a couple of days, it was &lt;strong&gt;179 invalid login attempts on average per day&lt;/strong&gt;.  What does the actual log look like?  Well, kinda like this:&lt;/p&gt;
 &lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;➜  ~ journalctl --since &lt;span class=&quot;token string&quot;&gt;&quot;2022-08-08 23:50:00&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Invalid user&quot;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;:53:35 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;49601&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user admin from &lt;span class=&quot;token number&quot;&gt;92.255&lt;/span&gt;.85.135 port &lt;span class=&quot;token number&quot;&gt;33200&lt;/span&gt;&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; 00:43:12 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;49914&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user jojo from &lt;span class=&quot;token number&quot;&gt;92.255&lt;/span&gt;.85.135 port &lt;span class=&quot;token number&quot;&gt;53540&lt;/span&gt;&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; 00:43:48 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;49917&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user pi from &lt;span class=&quot;token number&quot;&gt;121.205&lt;/span&gt;.57.223 port &lt;span class=&quot;token number&quot;&gt;38926&lt;/span&gt;&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; 00:43:48 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;49918&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user pi from &lt;span class=&quot;token number&quot;&gt;121.205&lt;/span&gt;.57.223 port &lt;span class=&quot;token number&quot;&gt;38932&lt;/span&gt;&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; 01:10:19 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;50102&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user lab from &lt;span class=&quot;token number&quot;&gt;92.255&lt;/span&gt;.85.135 port &lt;span class=&quot;token number&quot;&gt;42366&lt;/span&gt;&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; 01:13:59 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;50147&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user phpmyadmin from &lt;span class=&quot;token number&quot;&gt;43.132&lt;/span&gt;.157.133 port &lt;span class=&quot;token number&quot;&gt;48266&lt;/span&gt;&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; 01:15:21 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;50165&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user laozhao from &lt;span class=&quot;token number&quot;&gt;43.154&lt;/span&gt;.80.34 port &lt;span class=&quot;token number&quot;&gt;56600&lt;/span&gt;&lt;br /&gt;May &lt;span class=&quot;token number&quot;&gt;17&lt;/span&gt; 01:40:31 fedora sshd&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;50288&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;: Invalid user berrey from &lt;span class=&quot;token number&quot;&gt;222.71&lt;/span&gt;.13.226 port &lt;span class=&quot;token number&quot;&gt;32816&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;.&lt;/code&gt;&lt;/pre&gt;
-&lt;h5&gt;Analyzing the Data&lt;/h5&gt;
+&lt;h5 id=&quot;analyzing-the-data&quot; tabindex=&quot;-1&quot;&gt;Analyzing the Data &lt;a class=&quot;header-anchor&quot; href=&quot;#analyzing-the-data&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;We can look at this data from 4 different dimensions: time, IP addresses, usernames, and passwords.  In the interest of brevity, I will only be looking at this data from the IP addresses and usernames perspective.  I can tell you right now that the IP addresses are quite randomized.  Hackers have a large pool of IP addresses from which to launch attacks, whether due to VPNs, botnets, etc.  So blocking all these requests at the DMZ/firewall before it reaches our servers by using IP block blacklists isn&#39;t going to work.&lt;/p&gt;
 &lt;p&gt;What about the usernames?  Well, that is a bit more interesting.  The top 10 usernames and the number of attempted logins were:&lt;/p&gt;
 &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;admin 3758&lt;br /&gt;user 2370&lt;br /&gt;user2 1128&lt;br /&gt;ubuntu 877&lt;br /&gt;debian 689&lt;br /&gt;test 597&lt;br /&gt;pi 511&lt;br /&gt;oracle 429&lt;br /&gt;ftpuser 289&lt;br /&gt;test1 210&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Some other honorable mentions are:&lt;/p&gt;
 &lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;guest 180&lt;br /&gt;postgres 156&lt;br /&gt;user1 151&lt;br /&gt;support 144&lt;br /&gt;git 101&lt;br /&gt;mysql 95&lt;br /&gt;vagrant 63&lt;br /&gt;administrator 60&lt;br /&gt;hadoop 56&lt;br /&gt;steam 48&lt;br /&gt;miner 48&lt;br /&gt;minecraft 48&lt;br /&gt;xbmc 41&lt;br /&gt;www 41&lt;br /&gt;tomcat 41&lt;br /&gt;jenkins 40&lt;br /&gt;Administrator 35&lt;br /&gt;dev 34&lt;br /&gt;demo 34&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Looking at the usernames, it is obvious that bots are looking for popular services that may setup an SSH server with a weak default password.&lt;/p&gt;
-&lt;h5&gt;Mitigation Strategies&lt;/h5&gt;
+&lt;h5 id=&quot;mitigation-strategies&quot; tabindex=&quot;-1&quot;&gt;Mitigation Strategies &lt;a class=&quot;header-anchor&quot; href=&quot;#mitigation-strategies&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;p&gt;So what can we do about it?  That depends on how many resources you have to invest.  Enterprise companies have a wide variety of strategies. The most common is to block any connections to their SSH servers from external networks.  They make heavy use of bastion jump servers which are accessible only via corporate VPNs to a select number of &amp;quot;need to know&amp;quot; privileged users.&lt;/p&gt;
 &lt;p&gt;What about the little guy?  Well, there are still a lot of good options that will keep us safe too.&lt;/p&gt;
 &lt;ol&gt;
@@ -51,7 +56,8 @@
 &lt;li&gt;Configure Fail2ban, or your firewall flavor (e.g. UFW, IP tables) to lock out specific IP Addresses for a period of time (e.g. 30 min) if they fail to login with a valid SSH session after several attempts (e.g. 3).&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;With all that, which isn&#39;t too difficult to set up, it will be nearly impossible to get your SSH server PWNed.&lt;/p&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h3 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;Conclusion &lt;a class=&quot;header-anchor&quot; href=&quot;#conclusion&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;We started off exploring our logs for unauthorized SSH login attempts.  We had some fun looking at the data and what that tells us about our attackers. Finally, we discussed some considerations to stay protected and not waste our server resources answering hackers&#39; SSH attempts.&lt;/p&gt;
 &lt;p&gt;Stay vigilant... 😏 and make those hackers work hard for their bots.&lt;/p&gt;
 </content>
@@ -67,7 +73,8 @@
     &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_banner.webp&quot; alt=&quot;Animated Man on Computer&quot; data-align=&quot;center&quot; /&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Let&#39;s talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
   &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/posts/ssh_banner.gif&quot; alt=&quot;SSH Server Banner Demo Animation&quot; /&gt;
@@ -84,8 +91,10 @@
 &lt;li&gt;Dare I say, server ricing 😏 (Don&#39;t know what ricing is? Check out the term here: &lt;a href=&quot;https://jie-fang.github.io/blog/basics-of-ricing&quot;&gt;The Basics of Ricing Linux&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If you have concluded to proceed, then let us begin.&lt;/p&gt;
-&lt;h3&gt;Procedure&lt;/h3&gt;
-&lt;h5&gt;1. Edit sshd_config&lt;/h5&gt;
+&lt;h3 id=&quot;procedure&quot; tabindex=&quot;-1&quot;&gt;Procedure &lt;a class=&quot;header-anchor&quot; href=&quot;#procedure&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;h5 id=&quot;1.-edit-sshd_config&quot; tabindex=&quot;-1&quot;&gt;1. Edit sshd_config &lt;a class=&quot;header-anchor&quot; href=&quot;#1.-edit-sshd_config&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Open the server&#39;s SSH configuration file&lt;/p&gt;
@@ -100,7 +109,8 @@
 &lt;p&gt;This will activate a banner on an SSH login attempt.  The path of the file given can be any of your choosing. (In this example, the standard path of &lt;code&gt;/etc/issue&lt;/code&gt; is used.)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5&gt;2. Edit Banner File&lt;/h5&gt;
+&lt;h5 id=&quot;2.-edit-banner-file&quot; tabindex=&quot;-1&quot;&gt;2. Edit Banner File &lt;a class=&quot;header-anchor&quot; href=&quot;#2.-edit-banner-file&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Open the banner file&lt;/p&gt;
@@ -111,7 +121,8 @@
 &lt;p&gt;For some ASCII text art, check out &lt;a href=&quot;https://textkool.com/en/ascii-art-generator?hl=default&amp;amp;vl=default&amp;amp;font=ANSI%20Shadow&amp;amp;text=Your%20text%20here%20&quot;&gt;ASCII art generator | TextKool&lt;/a&gt;. (I&#39;m a sucker for the ANSI Shadow look 😋)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5&gt;3. Restart SSHD&lt;/h5&gt;
+&lt;h5 id=&quot;3.-restart-sshd&quot; tabindex=&quot;-1&quot;&gt;3. Restart SSHD &lt;a class=&quot;header-anchor&quot; href=&quot;#3.-restart-sshd&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;⚠️ WARNING&lt;/strong&gt;: In order for the changes to take effect, the SSH service will need to be restarted. In modern systems this will not disconnect your connection, but on older systems it might. Assure you did not make any mistakes on your SSH config file or the SSH service may &lt;strong&gt;fail&lt;/strong&gt; to restart, and you may struggle to get back into your server.&lt;/p&gt;
@@ -133,7 +144,8 @@
 &lt;p&gt;At this point, everything should be good to go. Logout and attempt a login to see your new banner.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;h3 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;Conclusion &lt;a class=&quot;header-anchor&quot; href=&quot;#conclusion&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;
+      &lt;span class=&quot;screen-reader-only&quot;&gt;Direct link to this section&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;With this procedure we have discussed the considerations for a SSH server banner, how to activate it and implement it. Here are some other useful links on the matter:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
