@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-10-30T05:12:41Z</updated>
+	<updated>2022-10-30T14:23:30Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -17,12 +17,7 @@
 		<link href="/posts/Malicious_Login_Attempts/"/>
 		<updated>2022-08-25T00:00:00Z</updated>
 		<id>/posts/Malicious_Login_Attempts/</id>
-		<content type="html">&lt;div class=&quot;image_container&quot;&gt;
-  &lt;div class=&quot;post_header_image&quot;&gt;
-    &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_attempts.webp&quot; alt=&quot;Article Image&quot; data-align=&quot;center&quot; /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;If you&#39;re brave enough to host your own server on the wide open internet, you should be aware that hacking bots run rampant, constantly trying to crack your server. Most hackers are pretty lazy. Like any real programmer, a hacker does not like to waste their time. However, their bots have plenty of time to waste and are probably trying to crack your SSH server regularly. Let&#39;s take a look at my recent experience with hacker bots and what I have done about it.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
   &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;https://i.imgflip.com/6r6ocf.jpg&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
@@ -61,12 +56,7 @@
 		<link href="/posts/Configure_SSH_Server_Banner/"/>
 		<updated>2022-07-17T00:00:00Z</updated>
 		<id>/posts/Configure_SSH_Server_Banner/</id>
-		<content type="html">&lt;div class=&quot;image_container&quot;&gt;
-  &lt;div class=&quot;post_header_image&quot;&gt;
-    &lt;img width=&quot;300&quot; height=&quot;300&quot; class=&quot;meme img_shadow&quot; title=&quot;Article Image&quot; src=&quot;/static/img/posts/ssh_banner.webp&quot; alt=&quot;Animated Man on Computer&quot; data-align=&quot;center&quot; /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Let&#39;s talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
   &lt;img class=&quot;console_gif img_shadow&quot; src=&quot;/static/img/posts/ssh_banner.gif&quot; alt=&quot;SSH Server Banner Demo Animation&quot; /&gt;
