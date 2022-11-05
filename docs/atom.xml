@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-11-05T02:27:08Z</updated>
+	<updated>2022-11-05T03:07:03Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -20,7 +20,7 @@
 		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;If you&#39;re brave enough to host your own server on the wide open internet, you should be aware that hacking bots run rampant, constantly trying to crack your server. Most hackers are pretty lazy. Like any real programmer, a hacker does not like to waste their time. However, their bots have plenty of time to waste and are probably trying to crack your SSH server regularly. Let&#39;s take a look at my recent experience with hacker bots and what I have done about it.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
-  &lt;img loading=&quot;lazy&quot; width=&quot;750&quot; height=&quot;500&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;/static/img/posts/hacker_meme.svg&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
+  &lt;img loading=&quot;lazy&quot; width=&quot;750&quot; height=&quot;500&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;/static/img/posts/malicious_SSH_login_attempts.webp&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
 &lt;/div&gt;
 &lt;h3 id=&quot;login-attempts&quot; tabindex=&quot;-1&quot;&gt;Login Attempts &lt;a class=&quot;header-anchor&quot; href=&quot;#login-attempts&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;First things first:  We must find these bot login attempts in our logs.  If you&#39;re not coming from an enterprise environment, you probably don&#39;t have some fancy security framework alerting you about every login attempt on your server.  No need to fret though, basic Linux system logs have you covered.  I hopped 🐇 onto one of my Fedora servers and fired up &lt;code&gt;journalctl&lt;/code&gt; to quickly look for SSHD&#39;s invalid login attempts with the following command:&lt;/p&gt;
