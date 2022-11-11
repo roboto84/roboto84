@@ -5,12 +5,21 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-11-07T23:53:17Z</updated>
+	<updated>2022-11-11T15:48:40Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
 		<email>none</email>
 	</author>
+	
+	<entry>
+		<title>Geometrize Your Images</title>
+		<link href="/posts/Geometrize_Your_Images/"/>
+		<updated>2022-11-08T00:00:00Z</updated>
+		<id>/posts/Geometrize_Your_Images/</id>
+		<content type="html">&lt;h3 id=&quot;post-coming-soon-...&quot; tabindex=&quot;-1&quot;&gt;Post Coming Soon ... &lt;a class=&quot;header-anchor&quot; href=&quot;#post-coming-soon-...&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+</content>
+	</entry>
 	
 	<entry>
 		<title>Malicious SSH Login Attempts</title>
@@ -20,7 +29,7 @@
 		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;If you&#39;re brave enough to host your own server on the wide open internet, you should be aware that hacking bots run rampant, constantly trying to crack your server. Most hackers are pretty lazy. Like any real programmer, a hacker does not like to waste their time. However, their bots have plenty of time to waste and are probably trying to crack your SSH server regularly. Let&#39;s take a look at my recent experience with hacker bots and what I have done about it.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
-  &lt;img loading=&quot;lazy&quot; width=&quot;750&quot; height=&quot;500&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;/static/img/posts/malicious_SSH_login_attempts.webp&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
+  &lt;img loading=&quot;lazy&quot; width=&quot;750&quot; height=&quot;500&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;/static/img/posts/Malicious_Login_Attempts/malicious_SSH_login_attempts.webp&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
 &lt;/div&gt;
 &lt;h3 id=&quot;login-attempts&quot; tabindex=&quot;-1&quot;&gt;Login Attempts &lt;a class=&quot;header-anchor&quot; href=&quot;#login-attempts&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;First things first:  We must find these bot login attempts in our logs.  If you&#39;re not coming from an enterprise environment, you probably don&#39;t have some fancy security framework alerting you about every login attempt on your server.  No need to fret though, basic Linux system logs have you covered.  I hopped 🐇 onto one of my Fedora servers and fired up &lt;code&gt;journalctl&lt;/code&gt; to quickly look for SSHD&#39;s invalid login attempts with the following command:&lt;/p&gt;
@@ -60,13 +69,13 @@
 &lt;p&gt;Let&#39;s talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
   &lt;video class=&quot;console_gif img_shadow&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot; playsinline=&quot;&quot;&gt;
-    &lt;source src=&quot;/static/img/posts/ssh_banner.webm&quot; type=&quot;video/webm&quot; /&gt;
-    &lt;source src=&quot;/static/img/posts/ssh_banner.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+    &lt;source src=&quot;/static/img/posts/Configure_SSH_Server_Banner/ssh_banner.webm&quot; type=&quot;video/webm&quot; /&gt;
+    &lt;source src=&quot;/static/img/posts/Configure_SSH_Server_Banner/ssh_banner.mp4&quot; type=&quot;video/mp4&quot; /&gt;
   &lt;/video&gt;
 &lt;/div&gt;
 &lt;p&gt;No worries, that was me not too long ago.  It is easy to configure, but the first question to ask before you do anything is an existential consideration of the matter...&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
-  &lt;img loading=&quot;lazy&quot; class=&quot;meme img_shadow&quot; width=&quot;652&quot; height=&quot;434&quot; title=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; src=&quot;/static/img/posts/configure_SSH_server_banner_meme.webp&quot; alt=&quot;You never stopped to think if you should Jurassic Park Meme&quot; data-align=&quot;center&quot; /&gt;
+  &lt;img loading=&quot;lazy&quot; class=&quot;meme img_shadow&quot; width=&quot;652&quot; height=&quot;434&quot; title=&quot;You were so preoccupied with whether or not you could... you never stopped to think if you should&quot; src=&quot;/static/img/posts/Configure_SSH_Server_Banner/configure_SSH_server_banner_meme.webp&quot; alt=&quot;You never stopped to think if you should Jurassic Park Meme&quot; data-align=&quot;center&quot; /&gt;
 &lt;/div&gt;
 &lt;p&gt;Well, there are a few reasons to have one:&lt;/p&gt;
 &lt;ul&gt;
