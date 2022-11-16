@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-11-13T06:18:17Z</updated>
+	<updated>2022-11-16T20:18:39Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -15,9 +15,173 @@
 	<entry>
 		<title>Geometrize Your Images</title>
 		<link href="/posts/Geometrize_Your_Images/"/>
-		<updated>2022-11-08T00:00:00Z</updated>
+		<updated>2022-11-16T00:00:00Z</updated>
 		<id>/posts/Geometrize_Your_Images/</id>
-		<content type="html">&lt;h3 id=&quot;post-coming-soon-...&quot; tabindex=&quot;-1&quot;&gt;Post Coming Soon ... &lt;a class=&quot;header-anchor&quot; href=&quot;#post-coming-soon-...&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As a data conscious Web Developer, I avoid images in my applications when I can.  If I do use
+them, I try to use them with impact while handling them carefully in data storage and through
+the wire.  Why so careful?  Images are big and don&#39;t scale as well as text data.  Try managing
+and storing 10,000 words, that&#39;s pretty easy... then consider trying to manage and storing
+10,000 images.  I bet managing the images scenario will make you sweat a bit more 😅.  We
+should think twice about how we use such an important form of storytelling on the web to get
+our message across quickly and with deep impact.  There are multiple options to load and
+present images on the web; from different image formats, image compression, lazy loading,
+above the fold only strategies, etc.  One of my favorite options is leveraging vector based
+images.  Specifically leveraging vector images based on the geometrization of my raster images
+due to their file size, packaging options, and cyber-punkish art form (vibes 😏).&lt;/p&gt;
+&lt;h3 id=&quot;vector-images&quot; tabindex=&quot;-1&quot;&gt;Vector Images &lt;a class=&quot;header-anchor&quot; href=&quot;#vector-images&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Vector images are great.  They can be fairly small in storage size, and infinitely re-sizable.  In a
+basic explanation, &lt;strong&gt;vector&lt;/strong&gt; images represent data about the image as formulas that describe
+how the image should be drawn using &lt;a href=&quot;https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)&quot;&gt;vectors&lt;/a&gt;.  How do you draw an
+image with only vectors?  You can think of a vector as a line with a certain length for our
+purposes here.  These lines are used to create geometric shapes that are usually filled in
+with colors.  These shapes (they could be hundreds or thousands of them) make up the image we
+want the file to portray.  High fidelity images on the web are usually not in vector formats
+(&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types&quot;&gt;jpg, gif, webp, avif, png&lt;/a&gt;)
+due to how much information some images need to convey (more on that later).  These high fidelity
+images are stored as what is known as &lt;strong&gt;raster&lt;/strong&gt; formats. &lt;a href=&quot;https://en.wikipedia.org/wiki/Raster_graphics&quot;&gt;Raster&lt;/a&gt; formats represent data about the image not
+as vector formulas, but as a 2D grid of pixels.  Here is a comparison of the format described above:&lt;/p&gt;
+&lt;div class=&quot;image_container&quot;&gt;
+  &lt;img loading=&quot;lazy&quot; width=&quot;600&quot; height=&quot;295&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/vector-vs-raster.webp&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;Fonts are a great example of vector vs raster formats.  Raster formats don&#39;t resize very well due to
+their image data being heavily based on pixel definition data.  Imagine what a nightmare it would
+be to resize fonts if they were stored in raster formats?  I would make the text illegible at some point.&lt;/p&gt;
+&lt;div class=&quot;image_container&quot;&gt;
+  &lt;img loading=&quot;lazy&quot; width=&quot;600&quot; height=&quot;295&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/font-raster-vs-vector.webp&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;Clearly the vector format is ideal for some use cases, but that isn&#39;t the case for all images.  Take
+for example a high fidelity image of Copenhagen&#39;s Nyhavn Canal.&lt;/p&gt;
+&lt;div class=&quot;image_container&quot;&gt;
+  &lt;img loading=&quot;lazy&quot; width=&quot;600&quot; height=&quot;295&quot; class=&quot;meme img_shadow&quot; title=&quot;My Bots are Hacking Your SSH Server&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/nyhavn.webp&quot; alt=&quot;My Bots are Hacking Your SSH Server&quot; data-align=&quot;center&quot; /&gt;
+&lt;/div&gt;
+&lt;p&gt;This image has &lt;strong&gt;a lot&lt;/strong&gt; of information.  At some point, if an image has too many details, describing
+it in terms of vectors becomes impractical as you would need to define vector shapes that contain less
+and less pixels when compared to its raster format equivalent.  That is something worth considering
+when comparing both formats.  Vector formats are more efficient for images in which the average vector
+shape definition can define the placement of multiple pixels of a raster format equivalent as long as
+the average vector shape definition takes less space than the pixel definition data.  Phew 😮‍💨, that
+was a mouth full, but it gets to an important point moving forward.&lt;/p&gt;
+&lt;h3 id=&quot;geometrized-images&quot; tabindex=&quot;-1&quot;&gt;Geometrized Images &lt;a class=&quot;header-anchor&quot; href=&quot;#geometrized-images&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Now that we understand how images are stored in vector and raster formats, let&#39;s talk about geometrizing
+raster images to get vector approximates.  In order to produce these vector images, we can use some
+great tools that have already been created by talented developers for this very purpose.  These tools
+will transform our raster format images into SVG vector format images.  Specifically you can choose to
+use one of the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.geometrize.co.uk/&quot;&gt;Geometrize&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://ondras.github.io/primitive.js/&quot;&gt;primitive.js&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://primitive.lol/&quot;&gt;Primitive&lt;/a&gt; for macOs&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I&#39;m a Linux person.  Fedora being my daily driver, I went for using &lt;a href=&quot;https://www.geometrize.co.uk/&quot;&gt;Geometrize&lt;/a&gt;
+to convert my images into geometric gold.  If you are feeling swirly, you can also us it&#39;s scripting
+interface which leverages the C++ based scripting language, &lt;a href=&quot;https://chaiscript.com/&quot;&gt;chaiscript&lt;/a&gt;.  I&#39;ll
+start off by geometrizing this post&#39;s thumbnail:&lt;/p&gt;
+&lt;div class=&quot;image_container&quot;&gt;
+  &lt;video class=&quot;console_gif img_shadow&quot; autoplay=&quot;&quot; loop=&quot;&quot; muted=&quot;&quot; playsinline=&quot;&quot;&gt;
+    &lt;source src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_generation.webm&quot; type=&quot;video/webm&quot; /&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+&lt;p&gt;Here are the results for other runs with different geometric shape counts:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Original&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;First Transformation&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Second Transformation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Original Geometric Face&quot; alt=&quot;Original Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_300x300.webp&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Large Geometric Face&quot; alt=&quot;Large Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_large.svg&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Small Geometric Face&quot; alt=&quot;Small Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_small.svg&quot; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300x300 webP&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;250 shapes SVG&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;85 shapes SVG&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;30kB&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;25kB&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;8.5kB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Here are the results for a different image:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Original&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;First Transformation&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Second Transformation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Original Origami Face&quot; alt=&quot;Original Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_300x300.webp&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Large Origami Face&quot; alt=&quot;Large Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_large.svg&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Small Origami Face&quot; alt=&quot;Small Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_small.svg&quot; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300x300 webP&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;250 shapes SVG&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;85 shapes SVG&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;30kB&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;25kB&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;8.5kB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As you can see, there are some interesting results.  How well the new vector image comes out is a bit
+subjective, but we can discuss a couple of factors.  We can say that not all images work for this kind
+of transformation.  Nothing is a silver bullet, but the options can be powerful and this offers a lot of
+those.  Usually images with naturally geometric features and natural lines do better.  Also Images with a
+good amount of contrast fair better too.  All of these features (natural lines, geometric features,
+contrast) allow the algorithm to make better decisions about how to generate shapes more efficiently
+leading to a powerful geometric based image at a low storage cost.&lt;/p&gt;
+&lt;h3 id=&quot;conclusion&quot; tabindex=&quot;-1&quot;&gt;Conclusion &lt;a class=&quot;header-anchor&quot; href=&quot;#conclusion&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;It is easy to enjoy these tools for their artistic potential and smaller file size.  It is able to
+reproduce popular &lt;a href=&quot;https://drawpaintacademy.com/art-styles/&quot;&gt;art styles&lt;/a&gt; for your custom images while
+also giving you a lot of file size options by controlling how many shapes a generated image uses, and
+by using SVG compression tools such as &lt;a href=&quot;https://github.com/svg/svgo&quot;&gt;svgo&lt;/a&gt;.  These vector approximate
+images can then be used for a variety of use cases, such as:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Placeholders for large images while they are dynamically loading.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Artful images for your main stage Hero section.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Thumbnails for larger images.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Infinitely re-sizable background images.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As with any tool, it won&#39;t be the best option for all images, or all situations.  It is an interesting
+option though that leads to even more interesting options as pointed out on
+&lt;a href=&quot;https://primitive.lol/&quot;&gt;Primitive&#39;s website&lt;/a&gt;... &amp;quot;&lt;em&gt;The results are somewhat random, so you won&#39;t get
+the same output twice,  even with the same inputs. One interesting use of this is to generate multiple
+images with the same input and then make an animated GIF of them to bring a static image to life&lt;/em&gt;&amp;quot;.&lt;br /&gt;
+So there is a lot of room for creativity.  For a more in depth reading on how SVG images can be used
+in support of high fidelity images, consider the following link:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://jmperezperez.com/blog/svg-placeholders/&quot;&gt;How to use SVG as a Placeholder, and Other Image Loading Techniques – José M. Pérez&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Software developing and engineering can sometimes be somewhat of an art form.  This is easy to see
+when dealing with images in web development as engineering decisions must come in balance with the
+software story you are trying to communicate.  Have fun digitally drawing! 😋&lt;/p&gt;
 </content>
 	</entry>
 	
