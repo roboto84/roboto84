@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-11-17T19:17:21Z</updated>
+	<updated>2022-11-17T22:04:17Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -86,9 +86,9 @@ start off by geometrizing this post&#39;s thumbnail:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Original webP&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;1st SVG&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;2nd SVG&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Original 300px webP&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;SVG (250 shapes)&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;SVG (85 shapes)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -96,11 +96,6 @@ start off by geometrizing this post&#39;s thumbnail:&lt;/p&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Original Geometric Face&quot; alt=&quot;Original Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_300x300.webp&quot; /&gt;&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Large Geometric Face&quot; alt=&quot;Large Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_large.svg&quot; /&gt;&lt;/td&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Small Geometric Face&quot; alt=&quot;Small Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_small.svg&quot; /&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;300px&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;250 shapes&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;85 shapes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;30kB&lt;/td&gt;
@@ -113,9 +108,9 @@ start off by geometrizing this post&#39;s thumbnail:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Original webP&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;1st SVG&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;2nd SVG&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Original 300px webP&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;SVG (250 shapes)&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;SVG (85 shapes)&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -125,14 +120,9 @@ start off by geometrizing this post&#39;s thumbnail:&lt;/p&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Small Origami Face&quot; alt=&quot;Small Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_small.svg&quot; /&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;300px&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;250 shapes&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;85 shapes&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;30kB&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;25kB&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;8.5kB&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;17kB&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;26kB&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;8.9kB&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -157,10 +147,13 @@ images can then be used for a variety of use cases, such as:&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;As with any tool, it won&#39;t be the best option for all images, or all situations.  It is an interesting
 option though that leads to even more interesting options as pointed out on
-&lt;a href=&quot;https://primitive.lol/&quot;&gt;Primitive&#39;s website&lt;/a&gt;... &amp;quot;&lt;em&gt;The results are somewhat random, so you won&#39;t get
-the same output twice,  even with the same inputs. One interesting use of this is to generate multiple
-images with the same input and then make an animated GIF of them to bring a static image to life&lt;/em&gt;&amp;quot;.&lt;br /&gt;
-So there is a lot of room for creativity.  For a more in depth reading on how SVG images can be used
+&lt;a href=&quot;https://primitive.lol/&quot;&gt;Primitive&#39;s website&lt;/a&gt;...&lt;/p&gt;
+&lt;span class=&quot;quote&quot;&gt;
+  &quot;The results are somewhat random, so you won&#39;t get the same output twice,  even with the same inputs. 
+One interesting use of this is to generate multiple images with the same input and then make an animated 
+GIF of them to bring a static image to life.&quot;
+&lt;/span&gt; 
+&lt;p&gt;So there is a lot of room for creativity.  For a more in depth reading on how SVG images can be used
 in support of high fidelity images, consider the following link:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://jmperezperez.com/blog/svg-placeholders/&quot;&gt;How to use SVG as a Placeholder, and Other Image Loading Techniques&lt;/a&gt;&lt;/li&gt;
