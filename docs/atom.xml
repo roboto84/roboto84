@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-11-17T04:57:31Z</updated>
+	<updated>2022-11-17T05:28:03Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -177,7 +177,7 @@ images with the same input and then make an animated GIF of them to bring a stat
 So there is a lot of room for creativity.  For a more in depth reading on how SVG images can be used
 in support of high fidelity images, consider the following link:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://jmperezperez.com/blog/svg-placeholders/&quot;&gt;How to use SVG as a Placeholder, and Other Image Loading Techniques – José M. Pérez&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://jmperezperez.com/blog/svg-placeholders/&quot;&gt;How to use SVG as a Placeholder, and Other Image Loading Techniques&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Software developing and engineering can sometimes be somewhat of an art form.  This is easy to see
 when dealing with images in web development as engineering decisions must come in balance with the
