@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-11-16T20:18:39Z</updated>
+	<updated>2022-11-17T04:57:31Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -92,21 +92,21 @@ start off by geometrizing this post&#39;s thumbnail:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Original&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;First Transformation&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Second Transformation&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Original webP&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;1st SVG&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;2nd SVG&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Original Geometric Face&quot; alt=&quot;Original Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_300x300.webp&quot; /&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Large Geometric Face&quot; alt=&quot;Large Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_large.svg&quot; /&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Small Geometric Face&quot; alt=&quot;Small Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_small.svg&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Large Geometric Face&quot; alt=&quot;Large Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_large.svg&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Small Geometric Face&quot; alt=&quot;Small Geometric Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/geo_face_small.svg&quot; /&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;300x300 webP&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;250 shapes SVG&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;85 shapes SVG&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300px&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;250 shapes&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;85 shapes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;30kB&lt;/td&gt;
@@ -119,21 +119,21 @@ start off by geometrizing this post&#39;s thumbnail:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Original&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;First Transformation&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Second Transformation&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;Original webP&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;1st SVG&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;2nd SVG&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Original Origami Face&quot; alt=&quot;Original Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_300x300.webp&quot; /&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Large Origami Face&quot; alt=&quot;Large Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_large.svg&quot; /&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;&lt;img title=&quot;Small Origami Face&quot; alt=&quot;Small Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_small.svg&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Large Origami Face&quot; alt=&quot;Large Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_large.svg&quot; /&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;img width=&quot;300&quot; height=&quot;300&quot; title=&quot;Small Origami Face&quot; alt=&quot;Small Origami Face&quot; src=&quot;/static/img/posts/Geometrize_Your_Images/origami_face_small.svg&quot; /&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;300x300 webP&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;250 shapes SVG&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;85 shapes SVG&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;300px&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;250 shapes&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;85 shapes&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&quot;text-align:center&quot;&gt;30kB&lt;/td&gt;
