@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2022-11-17T05:28:03Z</updated>
+	<updated>2022-11-17T16:52:39Z</updated>
 	<id>https://roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -69,15 +69,9 @@ great tools that have already been created by talented developers for this very 
 will transform our raster format images into SVG vector format images.  Specifically you can choose to
 use one of the following:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.geometrize.co.uk/&quot;&gt;Geometrize&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://ondras.github.io/primitive.js/&quot;&gt;primitive.js&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://primitive.lol/&quot;&gt;Primitive&lt;/a&gt; for macOs&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.geometrize.co.uk/&quot;&gt;Geometrize&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ondras.github.io/primitive.js/&quot;&gt;primitive.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://primitive.lol/&quot;&gt;Primitive&lt;/a&gt; for macOs&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;I&#39;m a Linux person.  Fedora being my daily driver, I went for using &lt;a href=&quot;https://www.geometrize.co.uk/&quot;&gt;Geometrize&lt;/a&gt;
 to convert my images into geometric gold.  If you are feeling swirly, you can also us it&#39;s scripting
@@ -156,18 +150,10 @@ also giving you a lot of file size options by controlling how many shapes a gene
 by using SVG compression tools such as &lt;a href=&quot;https://github.com/svg/svgo&quot;&gt;svgo&lt;/a&gt;.  These vector approximate
 images can then be used for a variety of use cases, such as:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Placeholders for large images while they are dynamically loading.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Artful images for your main stage Hero section.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Thumbnails for larger images.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Infinitely re-sizable background images.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Placeholders for large images while they are dynamically loading.&lt;/li&gt;
+&lt;li&gt;Artful images for your main stage Hero section.&lt;/li&gt;
+&lt;li&gt;Thumbnails for larger images.&lt;/li&gt;
+&lt;li&gt;Infinitely re-sizable background images.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;As with any tool, it won&#39;t be the best option for all images, or all situations.  It is an interesting
 option though that leads to even more interesting options as pointed out on
