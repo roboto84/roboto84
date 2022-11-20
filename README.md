@@ -4,7 +4,7 @@
 
 <div align="center">
     <a href="https://roboto84.dev" target="_blank">
-        <img width="150px" src="robot.svg" alt="Roboto84 - Writing code worth debugging" width="400" />
+        <img width="150px" src="robot.svg" alt="Roboto84 - Writing code worth debugging" />
     </a>
 </div>
 <br />
@@ -30,4 +30,16 @@
 </div>
 <br />
 
-<div align="center">See something you like? Show some ❤️ by starring ⭐ the repository</div>
+<div align="center">See something you like? Show some ❤️ by starring ⭐ the repository or check me out on below.</div>
+<br />
+<div align="center">
+    <a href="https://roboto84.dev" target="_blank">
+        <img width="25px" src="robot.svg" title="Roboto84 - Writing code worth debugging" alt="Roboto84 - Personal Website" />
+    </a>
+    <a rel="me" href="https://mastodon.social/@roboto84">
+        <img width="25px" src="mastodon.svg" title="Mastodon" alt="Mastodon"/>
+    </a>
+    <a href="https://codepen/roboto84">
+        <img width="25px" src="codepen.svg" title="Codepen" alt="Codepen"/>
+    </a>
+</div>
