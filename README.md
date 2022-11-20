@@ -35,12 +35,12 @@
 <br />
 <div align="center">
     <a href="https://roboto84.dev" target="_blank">
-        <img width="25px" src="robot.svg" title="Roboto84 - Writing code worth debugging" alt="Roboto84 - Personal Website" />
+        <img width="25px" src="robot.svg" title="roboto84 - Personal Website" alt="roboto84 - Personal Website" />
     </a>
     <a rel="me" href="https://mastodon.social/@roboto84">
-        <img width="25px" src="mastodon.svg" title="Mastodon" alt="Mastodon"/>
+        <img width="25px" src="mastodon.svg" title="Mastodon" alt="roboto84 Mastodon"/>
     </a>
-    <a href="https://codepen/roboto84">
-        <img width="25px" src="codepen.svg" title="Codepen" alt="Codepen"/>
+    <a href="https://codesandbox.io/u/roboto84">
+        <img width="25px" src="codepen.svg" title="Codepen" alt="roboto84 Codepen"/>
     </a>
 </div>
