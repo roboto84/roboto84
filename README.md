@@ -4,7 +4,7 @@
 
 <div align="center">
     <a href="https://roboto84.dev" target="_blank">
-        <img width="150px" src="robot.svg" alt="Roboto84 - Writing code worth debugging" />
+        <img width="150px" src="icons/robot.svg" alt="Roboto84 - Writing code worth debugging" />
     </a>
 </div>
 <br />
@@ -31,16 +31,19 @@
 
 <br />
 
-<div align="center">See something you like? Show some ❤️ by starring ⭐ the repository or check me out on below.</div>
+<div align="center">See something you like? Show some ❤️ by starring ⭐ the repository or check me out below.</div>
 <br />
 <div align="center">
     <a href="https://roboto84.dev" target="_blank">
-        <img width="25px" src="robot.svg" title="roboto84 - Personal Website" alt="roboto84 - Personal Website" />
+        <img width="25px" src="icons/robot.svg" title="roboto84 - Personal Website" alt="roboto84 - Personal Website" />
     </a>
     <a rel="me" href="https://mastodon.social/@roboto84" target="_blank">
-        <img width="25px" src="mastodon.svg" title="roboto84 - Mastodon" alt="roboto84 - Mastodon"/>
+        <img width="25px" src="icons/mastodon.svg" title="roboto84 - Mastodon" alt="roboto84 - Mastodon"/>
     </a>
     <a href="https://codesandbox.io/u/roboto84" target="_blank">
-        <img width="22px" src="codepen.svg" title="roboto84 - Codepen" alt="roboto84 - Codepen"/>
+        <img width="22px" src="icons/codepen.svg" title="roboto84 - Codepen" alt="roboto84 - Codepen"/>
+    </a>
+    <a href="https://leetcode.com/roboto84/" target="_blank">
+        <img width="21px" src="icons/leetcode.svg" title="roboto84 - LeetCode" alt="roboto84 - LeetCode"/>
     </a>
 </div>
