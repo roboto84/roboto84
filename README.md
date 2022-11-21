@@ -37,10 +37,10 @@
     <a href="https://roboto84.dev" target="_blank">
         <img width="25px" src="robot.svg" title="roboto84 - Personal Website" alt="roboto84 - Personal Website" />
     </a>
-    <a rel="me" href="https://mastodon.social/@roboto84">
-        <img width="25px" src="mastodon.svg" title="Mastodon" alt="roboto84 Mastodon"/>
+    <a rel="me" href="https://mastodon.social/@roboto84" target="_blank">
+        <img width="25px" src="mastodon.svg" title="roboto84 - Mastodon" alt="roboto84 - Mastodon"/>
     </a>
-    <a href="https://codesandbox.io/u/roboto84">
-        <img width="25px" src="codepen.svg" title="Codepen" alt="roboto84 Codepen"/>
+    <a href="https://codesandbox.io/u/roboto84" target="_blank">
+        <img width="22px" src="codepen.svg" title="roboto84 - Codepen" alt="roboto84 - Codepen"/>
     </a>
 </div>
