@@ -5,7 +5,7 @@
 	
 	<link href="/atom.xml" rel="self"/>
 	<link href=""/>
-	<updated>2023-06-01T20:58:26Z</updated>
+	<updated>2023-06-01T21:19:42Z</updated>
 	<id>https://www.roboto84.dev</id>
 	<author>
 		<name>roboto84</name>
@@ -14,9 +14,9 @@
 	
 	<entry>
 		<title>Geometrize Your Images</title>
-		<link href="/pages/posts/Geometrize_Your_Images/"/>
+		<link href="/posts/Geometrize_Your_Images/"/>
 		<updated>2022-11-16T00:00:00Z</updated>
-		<id>/pages/posts/Geometrize_Your_Images/</id>
+		<id>/posts/Geometrize_Your_Images/</id>
 		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;As a data-conscious Web Developer, I avoid using images in my applications when I can.  If I do use them, I try to use them with impact while handling them carefully in data storage and through the wire.  Why so careful?  Images are big and don&#39;t scale as well as text data.  Try managing and storing 10,000 words, that&#39;s pretty easy... then consider trying to manage and store 10,000 images.  I bet managing the images scenario will make you sweat a bit more 😅.  We should think twice about how we use such an important form of storytelling on the web to get our message across quickly and with deep impact.  There are multiple options to load and present images on the web, e.g, different image formats, image compression, lazy loading, above the fold strategies.  One of my favorite options is leveraging vector images.  Specifically, vector images based on the geometrization of raster images, due to their smaller file size, packaging options, and cyber-punkish art form (vibes 😏).&lt;/p&gt;
 &lt;h3 id=&quot;vector-images&quot; tabindex=&quot;-1&quot;&gt;Vector Images &lt;a class=&quot;header-anchor&quot; href=&quot;#vector-images&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -121,9 +121,9 @@
 	
 	<entry>
 		<title>Malicious SSH Login Attempts</title>
-		<link href="/pages/posts/Malicious_Login_Attempts/"/>
+		<link href="/posts/Malicious_Login_Attempts/"/>
 		<updated>2022-08-25T00:00:00Z</updated>
-		<id>/pages/posts/Malicious_Login_Attempts/</id>
+		<id>/posts/Malicious_Login_Attempts/</id>
 		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;If you&#39;re brave enough to host your own server on the wide open internet, you should be aware that hacking bots run rampant, constantly trying to crack your server. Most hackers are pretty lazy. Like any real programmer, a hacker does not like to waste their time. However, their bots have plenty of time to waste and are probably trying to crack your SSH server regularly. Let&#39;s take a look at my recent experience with hacker bots and what I have done about it.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
@@ -160,9 +160,9 @@
 	
 	<entry>
 		<title>Configure SSH Server Banner</title>
-		<link href="/pages/posts/Configure_SSH_Server_Banner/"/>
+		<link href="/posts/Configure_SSH_Server_Banner/"/>
 		<updated>2022-07-17T00:00:00Z</updated>
-		<id>/pages/posts/Configure_SSH_Server_Banner/</id>
+		<id>/posts/Configure_SSH_Server_Banner/</id>
 		<content type="html">&lt;h3 id=&quot;introduction&quot; tabindex=&quot;-1&quot;&gt;Introduction &lt;a class=&quot;header-anchor&quot; href=&quot;#introduction&quot;&gt;&lt;span aria-label=&quot;header anchor&quot; class=&quot;header-anchor__symbol&quot;&gt;#&lt;/span&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Let&#39;s talk about your SSH server banner, and the fact that you don&#39;t have one... just yet.&lt;/p&gt;
 &lt;div class=&quot;image_container&quot;&gt;
