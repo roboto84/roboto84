@@ -1,0 +1,10 @@
+Sitemap: https://www.roboto84.dev/sitemap.xml
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
